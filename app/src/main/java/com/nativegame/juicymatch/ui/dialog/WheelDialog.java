@@ -76,7 +76,7 @@ public class WheelDialog extends BaseDialog implements AdManager.AdRewardListene
                 Preferences.PREF_SETTING.putLong(Preferences.KEY_LAST_PLAY_TIME, System.currentTimeMillis());
                 spinWheel();
             } else {
-                showRewardAd();
+                //showRewardAd();
             }
             // Hide play button
             view.setVisibility(View.INVISIBLE);
@@ -174,22 +174,22 @@ public class WheelDialog extends BaseDialog implements AdManager.AdRewardListene
         databaseHelper.updateItemCount(name, saving + count);
     }
 
-    private void showRewardAd() {
-        AdManager adManager = ((MainActivity) mParent).getAdManager();
-        adManager.setListener(this);
-        boolean isConnect = adManager.showRewardAd();
-        // Show error dialog if no internet connect
-        if (!isConnect) {
-            ErrorDialog dialog = new ErrorDialog(mParent) {
-                @Override
-                public void retry() {
-                    adManager.requestAd();
-                    showRewardAd();
-                }
-            };
-            mParent.showDialog(dialog);
-        }
-    }
+//    private void showRewardAd() {
+//        AdManager adManager = ((MainActivity) mParent).getAdManager();
+//        adManager.setListener(this);
+//        boolean isConnect = adManager.showRewardAd();
+//        // Show error dialog if no internet connect
+//        if (!isConnect) {
+//            ErrorDialog dialog = new ErrorDialog(mParent) {
+//                @Override
+//                public void retry() {
+//                    adManager.requestAd();
+//                    showRewardAd();
+//                }
+//            };
+//            mParent.showDialog(dialog);
+//        }
+//    }
 
     public void updateCoin() {
     }

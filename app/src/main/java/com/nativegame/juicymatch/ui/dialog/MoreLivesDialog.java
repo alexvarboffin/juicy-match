@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.nativegame.juicymatch.MainActivity;
 import com.nativegame.juicymatch.R;
-import com.nativegame.juicymatch.ad.AdManager;
+
 import com.nativegame.juicymatch.asset.Sounds;
 import com.nativegame.natyengine.ui.GameActivity;
 import com.nativegame.natyengine.ui.GameButton;
@@ -15,7 +15,9 @@ import com.nativegame.natyengine.ui.GameText;
  * Created by Oscar Liang on 2022/02/23
  */
 
-public class MoreLivesDialog extends BaseDialog implements View.OnClickListener, AdManager.AdRewardListener {
+public class MoreLivesDialog extends BaseDialog implements View.OnClickListener
+//        , AdManager.AdRewardListener
+{
 
     private int mSelectedId;
 
@@ -53,7 +55,7 @@ public class MoreLivesDialog extends BaseDialog implements View.OnClickListener,
     @Override
     protected void onHide() {
         if (mSelectedId == R.id.btn_watch_ad) {
-            showRewardAd();
+            //showRewardAd();
         }
     }
 
@@ -69,36 +71,36 @@ public class MoreLivesDialog extends BaseDialog implements View.OnClickListener,
         }
     }
 
-    @Override
-    public void onEarnReward() {
-        ((MainActivity) mParent).getLivesTimer().addLive();
-    }
-
-    @Override
-    public void onLossReward() {
-        // We do nothing
-    }
+//    @Override
+//    public void onEarnReward() {
+//        ((MainActivity) mParent).getLivesTimer().addLive();
+//    }
+//
+//    @Override
+//    public void onLossReward() {
+//        // We do nothing
+//    }
     //========================================================
 
     //--------------------------------------------------------
     // Methods
     //--------------------------------------------------------
-    private void showRewardAd() {
-        AdManager adManager = ((MainActivity) mParent).getAdManager();
-        adManager.setListener(this);
-        boolean isConnect = adManager.showRewardAd();
-        // Show error dialog if no internet connect
-        if (!isConnect) {
-            ErrorDialog dialog = new ErrorDialog(mParent) {
-                @Override
-                public void retry() {
-                    adManager.requestAd();
-                    showRewardAd();
-                }
-            };
-            mParent.showDialog(dialog);
-        }
-    }
+//    private void showRewardAd() {
+//        AdManager adManager = ((MainActivity) mParent).getAdManager();
+//        adManager.setListener(this);
+//        boolean isConnect = adManager.showRewardAd();
+//        // Show error dialog if no internet connect
+//        if (!isConnect) {
+//            ErrorDialog dialog = new ErrorDialog(mParent) {
+//                @Override
+//                public void retry() {
+//                    adManager.requestAd();
+//                    showRewardAd();
+//                }
+//            };
+//            mParent.showDialog(dialog);
+//        }
+//    }
     //========================================================
 
 }

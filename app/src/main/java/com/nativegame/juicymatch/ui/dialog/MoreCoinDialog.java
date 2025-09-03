@@ -4,7 +4,6 @@ import android.view.View;
 
 import com.nativegame.juicymatch.MainActivity;
 import com.nativegame.juicymatch.R;
-import com.nativegame.juicymatch.ad.AdManager;
 import com.nativegame.juicymatch.asset.Sounds;
 import com.nativegame.juicymatch.database.DatabaseHelper;
 import com.nativegame.juicymatch.item.Item;
@@ -17,7 +16,9 @@ import com.nativegame.natyengine.ui.GameText;
  * Created by Oscar Liang on 2022/02/23
  */
 
-public class MoreCoinDialog extends BaseDialog implements View.OnClickListener, AdManager.AdRewardListener {
+public class MoreCoinDialog extends BaseDialog implements View.OnClickListener
+//        , AdManager.AdRewardListener
+{
 
     private static final int REWARD_COIN = 50;
 
@@ -57,7 +58,7 @@ public class MoreCoinDialog extends BaseDialog implements View.OnClickListener, 
     @Override
     protected void onHide() {
         if (mSelectedId == R.id.btn_watch_ad) {
-            showRewardAd();
+            //showRewardAd();
         }
     }
 
@@ -73,40 +74,40 @@ public class MoreCoinDialog extends BaseDialog implements View.OnClickListener, 
         }
     }
 
-    @Override
-    public void onEarnReward() {
-        DatabaseHelper databaseHelper = DatabaseHelper.getInstance(mParent);
-        // Update coin from db
-        int saving = databaseHelper.getItemCount(Item.COIN);
-        databaseHelper.updateItemCount(Item.COIN, saving + REWARD_COIN);
-        updateCoin();
-    }
-
-    @Override
-    public void onLossReward() {
-        // We do nothing
-    }
+//    @Override
+//    public void onEarnReward() {
+//        DatabaseHelper databaseHelper = DatabaseHelper.getInstance(mParent);
+//        // Update coin from db
+//        int saving = databaseHelper.getItemCount(Item.COIN);
+//        databaseHelper.updateItemCount(Item.COIN, saving + REWARD_COIN);
+//        updateCoin();
+//    }
+//
+//    @Override
+//    public void onLossReward() {
+//        // We do nothing
+//    }
     //========================================================
 
     //--------------------------------------------------------
     // Methods
     //--------------------------------------------------------
-    private void showRewardAd() {
-        AdManager adManager = ((MainActivity) mParent).getAdManager();
-        adManager.setListener(this);
-        boolean isConnect = adManager.showRewardAd();
-        // Show error dialog if no internet connect
-        if (!isConnect) {
-            ErrorDialog dialog = new ErrorDialog(mParent) {
-                @Override
-                public void retry() {
-                    adManager.requestAd();
-                    showRewardAd();
-                }
-            };
-            mParent.showDialog(dialog);
-        }
-    }
+//    private void showRewardAd() {
+//        AdManager adManager = ((MainActivity) mParent).getAdManager();
+//        adManager.setListener(this);
+//        boolean isConnect = adManager.showRewardAd();
+//        // Show error dialog if no internet connect
+//        if (!isConnect) {
+//            ErrorDialog dialog = new ErrorDialog(mParent) {
+//                @Override
+//                public void retry() {
+//                    adManager.requestAd();
+//                    showRewardAd();
+//                }
+//            };
+//            mParent.showDialog(dialog);
+//        }
+//    }
 
     public void updateCoin() {
     }

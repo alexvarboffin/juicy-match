@@ -2,7 +2,6 @@ package com.nativegame.juicymatch;
 
 import android.os.Bundle;
 
-import com.nativegame.juicymatch.ad.AdManager;
 import com.nativegame.juicymatch.timer.LivesTimer;
 import com.nativegame.juicymatch.ui.fragment.LoadingFragment;
 import com.nativegame.natyengine.ui.GameActivity;
@@ -37,15 +36,15 @@ import com.nativegame.natyengine.ui.GameActivity;
 
 public class MainActivity extends GameActivity {
 
-    private AdManager mAdManager;
+    //private AdManager mAdManager;
     private LivesTimer mLivesTimer;
 
     //--------------------------------------------------------
     // Getter and Setter
     //--------------------------------------------------------
-    public AdManager getAdManager() {
-        return mAdManager;
-    }
+//    public AdManager getAdManager() {
+//        return mAdManager;
+//    }
 
     public LivesTimer getLivesTimer() {
         return mLivesTimer;
@@ -63,7 +62,7 @@ public class MainActivity extends GameActivity {
         setContentView(R.layout.activity_main);
         setFragmentContainer(R.id.layout_container);
 
-        mAdManager = new AdManager(this);
+        //mAdManager = new AdManager(this);
         mLivesTimer = new LivesTimer(this);
 
         // Show the menu fragment

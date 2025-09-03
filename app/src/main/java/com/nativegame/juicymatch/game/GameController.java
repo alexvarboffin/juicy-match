@@ -3,10 +3,11 @@ package com.nativegame.juicymatch.game;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.nativegame.juicymatch.MainActivity;
 import com.nativegame.juicymatch.R;
-import com.nativegame.juicymatch.ad.AdManager;
+
 import com.nativegame.juicymatch.asset.Sounds;
 import com.nativegame.juicymatch.game.algorithm.Algorithm;
 import com.nativegame.juicymatch.game.tutorial.Tutorial;
@@ -30,7 +31,9 @@ import com.nativegame.natyengine.ui.GameActivity;
  */
 
 
-public class GameController extends Entity implements EventListener, AdManager.AdRewardListener {
+public class GameController extends Entity implements EventListener
+//        , AdManager.AdRewardListener
+{
 
     private final GameActivity mParent;
     private final Algorithm mRegularTimeAlgorithm;
@@ -161,7 +164,8 @@ public class GameController extends Entity implements EventListener, AdManager.A
             case PLAYER_OUT_OF_MOVE:
                 // Check player has extra lives
                 if (mExtraLives) {
-                    showMoreMoveDialog();
+                    //showMoreMoveDialog();
+                    Toast.makeText(mParent, "todo()", Toast.LENGTH_SHORT).show();
                     mExtraLives = false;
                 } else {
                     dispatchEvent(GameEvent.GAME_OVER);
@@ -174,19 +178,19 @@ public class GameController extends Entity implements EventListener, AdManager.A
         }
     }
 
-    @Override
-    public void onEarnReward() {
-        // The ad will pause the game, so we resume it
-        mEngine.resume();
-        dispatchEvent(GameEvent.ADD_EXTRA_MOVES);
-    }
-
-    @Override
-    public void onLossReward() {
-        // The ad will pause the game, so we resume it
-        mEngine.resume();
-        dispatchEvent(GameEvent.GAME_OVER);
-    }
+//    @Override
+//    public void onEarnReward() {
+//        // The ad will pause the game, so we resume it
+//        mEngine.resume();
+//        dispatchEvent(GameEvent.ADD_EXTRA_MOVES);
+//    }
+//
+//    @Override
+//    public void onLossReward() {
+//        // The ad will pause the game, so we resume it
+//        mEngine.resume();
+//        dispatchEvent(GameEvent.GAME_OVER);
+//    }
     //========================================================
 
     //--------------------------------------------------------
@@ -289,52 +293,52 @@ public class GameController extends Entity implements EventListener, AdManager.A
         });
     }
 
-    private void showMoreMoveDialog() {
-        mParent.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                MoreMoveDialog moreMoveDialog = new MoreMoveDialog(mParent) {
-                    @Override
-                    public void showAd() {
-                        showRewardedAd();
-                    }
+//    private void showMoreMoveDialog() {
+//        mParent.runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                MoreMoveDialog moreMoveDialog = new MoreMoveDialog(mParent) {
+//                    @Override
+//                    public void showAd() {
+//                        showRewardedAd();
+//                    }
+//
+//                    @Override
+//                    public void quit() {
+//                        dispatchEvent(GameEvent.GAME_OVER);
+//                    }
+//                };
+//                mParent.showDialog(moreMoveDialog);
+//            }
+//        });
+//    }
 
-                    @Override
-                    public void quit() {
-                        dispatchEvent(GameEvent.GAME_OVER);
-                    }
-                };
-                mParent.showDialog(moreMoveDialog);
-            }
-        });
-    }
-
-    private void showRewardedAd() {
-        // Show rewarded ad
-        AdManager adManager = ((MainActivity) mParent).getAdManager();
-        adManager.setListener(this);
-        boolean isConnect = adManager.showRewardAd();
-        // Check connection
-        if (isConnect) {
-            // Pause the game when loading ad, or the pause dialog will show
-            mEngine.pause();
-        } else {
-            // Show error dialog if no internet connect
-            ErrorDialog dialog = new ErrorDialog(mParent) {
-                @Override
-                public void retry() {
-                    adManager.requestAd();
-                    showRewardedAd();
-                }
-
-                @Override
-                public void quit() {
-                    dispatchEvent(GameEvent.GAME_OVER);
-                }
-            };
-            mParent.showDialog(dialog);
-        }
-    }
+//    private void showRewardedAd() {
+//        // Show rewarded ad
+//        AdManager adManager = ((MainActivity) mParent).getAdManager();
+//        adManager.setListener(this);
+//        boolean isConnect = adManager.showRewardAd();
+//        // Check connection
+//        if (isConnect) {
+//            // Pause the game when loading ad, or the pause dialog will show
+//            mEngine.pause();
+//        } else {
+//            // Show error dialog if no internet connect
+//            ErrorDialog dialog = new ErrorDialog(mParent) {
+//                @Override
+//                public void retry() {
+//                    adManager.requestAd();
+//                    showRewardedAd();
+//                }
+//
+//                @Override
+//                public void quit() {
+//                    dispatchEvent(GameEvent.GAME_OVER);
+//                }
+//            };
+//            mParent.showDialog(dialog);
+//        }
+//    }
     //========================================================
 
 }
