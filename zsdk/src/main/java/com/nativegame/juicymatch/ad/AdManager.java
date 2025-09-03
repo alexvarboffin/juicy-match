@@ -20,7 +20,7 @@ public class AdManager {
 //import com.google.android.gms.ads.rewarded.RewardItem;
 //import com.google.android.gms.ads.rewarded.RewardedAd;
 //import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
-//import com.nativegame.juicymatch.R;
+//import com.walhalla.sdk.R;
 //import com.nativegame.natyengine.util.ResourceUtils;
 //
 ///**

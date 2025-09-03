@@ -34,22 +34,8 @@ import com.nativegame.natyengine.ui.GameActivity;
  *    SOFTWARE.
  */
 
-public class MainActivity extends GameActivity {
+public class MainActivity extends BaseActivity {
 
-    //private AdManager mAdManager;
-    private LivesTimer mLivesTimer;
-
-    //--------------------------------------------------------
-    // Getter and Setter
-    //--------------------------------------------------------
-//    public AdManager getAdManager() {
-//        return mAdManager;
-//    }
-
-    public LivesTimer getLivesTimer() {
-        return mLivesTimer;
-    }
-    //========================================================
 
     //--------------------------------------------------------
     // Overriding methods
