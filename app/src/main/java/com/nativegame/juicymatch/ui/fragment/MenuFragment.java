@@ -8,7 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.nativegame.juicymatch.R;
-import com.nativegame.juicymatch.asset.Musics;
+import com.nativegame.juicymatch.asset.Musics0;
 import com.nativegame.juicymatch.asset.Preferences;
 import com.nativegame.juicymatch.asset.Sounds;
 import com.nativegame.juicymatch.ui.dialog.ExitDialog;
@@ -72,7 +72,7 @@ public class MenuFragment extends GameFragment implements View.OnClickListener {
         getGameActivity().getSoundManager().setAudioEnable(soundEnable);
 
         // Play bg music
-        Musics.BG_MUSIC.play();
+        Musics0.BG_MUSIC.play();
     }
 
     @Override

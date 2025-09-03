@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nativegame.juicymatch.R;
-import com.nativegame.juicymatch.asset.Musics;
+import com.nativegame.juicymatch.asset.Musics0;
 import com.nativegame.juicymatch.asset.Sounds;
 import com.nativegame.juicymatch.game.JuicyMatch;
 import com.nativegame.natyengine.Game;
@@ -48,10 +48,10 @@ public class JuicyMatchFragment extends GameFragment implements View.OnClickList
         btnPause.setOnClickListener(this);
 
         // Update bg music
-        Musics.BG_MUSIC.setCurrentStream(false);
-        Musics.BG_MUSIC.stop();
-        Musics.GAME_MUSIC.setCurrentStream(true);
-        Musics.GAME_MUSIC.play();
+        Musics0.BG_MUSIC.setCurrentStream(false);
+        Musics0.BG_MUSIC.stop();
+        Musics0.GAME_MUSIC.setCurrentStream(true);
+        Musics0.GAME_MUSIC.play();
     }
 
     @Override
@@ -72,10 +72,10 @@ public class JuicyMatchFragment extends GameFragment implements View.OnClickList
         mGame.stop();
 
         // Update bg music
-        Musics.GAME_MUSIC.setCurrentStream(false);
-        Musics.GAME_MUSIC.stop();
-        Musics.BG_MUSIC.setCurrentStream(true);
-        Musics.BG_MUSIC.play();
+        Musics0.GAME_MUSIC.setCurrentStream(false);
+        Musics0.GAME_MUSIC.stop();
+        Musics0.BG_MUSIC.setCurrentStream(true);
+        Musics0.BG_MUSIC.play();
     }
 
     @Override

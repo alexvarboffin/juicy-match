@@ -9,7 +9,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.nativegame.juicymatch.R;
 import com.nativegame.juicymatch.asset.Colors;
 import com.nativegame.juicymatch.asset.Fonts;
-import com.nativegame.juicymatch.asset.Musics;
+import com.nativegame.juicymatch.asset.Musics0;
 import com.nativegame.juicymatch.asset.Preferences;
 import com.nativegame.juicymatch.asset.Sounds;
 import com.nativegame.juicymatch.asset.Textures;
@@ -48,7 +48,7 @@ public class LoadingFragment extends GameFragment {
                 // Load assets
                 Textures.load(getGameActivity().getTextureManager(), getContext());
                 Sounds.load(getGameActivity().getSoundManager());
-                Musics.load(getGameActivity().getMusicManager());
+                Musics0.load(getGameActivity().getMusicManager());
                 Fonts.load(getContext());
                 Colors.load(getContext());
                 Preferences.load(getContext());
