@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Juicy Match</string>
+    <string name="app_name" translatable="false">FB</string>
     <string name="app_version" translatable="false">1.6</string>
     <string name="txt_ad_coins">Watch Ad for\n more coins?</string>
     <string name="txt_ad_extra_moves">Watch Ad for\n 3 extra moves?</string>
