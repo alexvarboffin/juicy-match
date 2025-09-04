@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -43,11 +42,35 @@
         android:id="@+id/btn_start"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_width"
-        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginTop="0.dp"
         android:background="@drawable/ui_btn_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+
+
+    <com.nativegame.natyengine.ui.GameButton
+        android:id="@+id/btnFaq"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ui_btn_faq"
+        app:layout_constraintDimensionRatio="5:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
+
+
+    <com.nativegame.natyengine.ui.GameButton
+        android:id="@+id/btnPrivacy"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="0dp"
+        android:background="@drawable/ui_btn_policy"
+        android:layout_marginTop="100dp"
+        app:layout_constraintDimensionRatio="5:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
 
     <com.nativegame.natyengine.ui.GameButton
         android:id="@+id/btn_setting"

@@ -1,6 +1,5 @@
 package com.nativegame.juicymatch.game;
 
-import com.nativegame.juicymatch.BaseActivity;
 import com.nativegame.juicymatch.game.algorithm.Algorithm;
 import com.nativegame.juicymatch.game.algorithm.BonusTimeAlgorithm;
 import com.nativegame.juicymatch.game.algorithm.RegularTimeAlgorithm;
@@ -21,6 +20,7 @@ import com.nativegame.natyengine.Game;
 import com.nativegame.natyengine.camera.FixedCamera;
 import com.nativegame.natyengine.engine.Engine;
 import com.nativegame.natyengine.input.touch.SingleTouchController;
+
 import com.nativegame.natyengine.ui.GameActivity;
 import com.nativegame.natyengine.ui.GameView;
 import com.nativegame.natyengine.util.debug.EntityCounter;
@@ -113,7 +113,7 @@ public class JuicyMatch extends Game {
             @Override
             public void quitGame() {
                 // Reduce one live
-                ((BaseActivity) getActivity()).getLivesTimer().reduceLive();
+                ((GameActivity) getActivity()).getLivesTimer().reduceLive();
                 getActivity().navigateBack();
             }
         };

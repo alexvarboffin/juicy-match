@@ -6,23 +6,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.nativegame.juicymatch.BaseActivity;
-import com.walhalla.sdk.R;
+
 import com.nativegame.juicymatch.asset.Sounds;
 import com.nativegame.juicymatch.database.DatabaseHelper;
 import com.nativegame.juicymatch.item.Item;
 import com.nativegame.juicymatch.level.Level;
-import com.nativegame.juicymatch.timer.LivesTimer;
+import com.nativegame.timer.LivesTimer;
 import com.nativegame.juicymatch.ui.dialog.LevelDialog;
 import com.nativegame.juicymatch.ui.dialog.MoreCoinDialog;
 import com.nativegame.juicymatch.ui.dialog.MoreLivesDialog;
 import com.nativegame.juicymatch.ui.dialog.SettingDialog;
 import com.nativegame.juicymatch.ui.dialog.ShopDialog;
 import com.nativegame.juicymatch.ui.dialog.WheelDialog;
+import com.nativegame.natyengine.ui.GameActivity;
 import com.nativegame.natyengine.ui.GameButton;
 import com.nativegame.natyengine.ui.GameFragment;
 import com.nativegame.natyengine.ui.GameImage;
 import com.nativegame.natyengine.ui.GameText;
+import com.walhalla.sdk.R;
 
 import java.util.List;
 
@@ -62,7 +63,7 @@ public class MapFragment extends GameFragment implements View.OnClickListener {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mLivesTimer = ((BaseActivity) getGameActivity()).getLivesTimer();
+        mLivesTimer = ((GameActivity) getGameActivity()).getLivesTimer();
 
         // Init button
         GameButton btnSetting = (GameButton) view.findViewById(R.id.btn_setting);

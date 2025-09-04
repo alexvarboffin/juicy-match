@@ -1,8 +1,7 @@
 package com.nativegame.juicymatch.ui.dialog;
 
-import com.nativegame.juicymatch.BaseActivity;
-import com.walhalla.sdk.R;
 import com.nativegame.natyengine.ui.GameActivity;
+import com.walhalla.sdk.R;
 
 /**
  * Created by Oscar Liang on 2022/02/23
@@ -23,7 +22,7 @@ public class LossDialog extends BaseDialog {
         setExitAnimationId(R.anim.exit_to_bottom);
 
         // Reduce one live
-        ((BaseActivity) mParent).getLivesTimer().reduceLive();
+        ((GameActivity) mParent).getLivesTimer().reduceLive();
 
         // Dismiss the dialog after 1500ms
         getContentView().postDelayed(new Runnable() {

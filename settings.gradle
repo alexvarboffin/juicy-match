@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "JuicyMatch"
 include ':app'
 include ':zsdk'
+include ':natyengine'
+
