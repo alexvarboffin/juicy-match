@@ -63,7 +63,7 @@ class MainActivity : GameActivity() {
 
     override fun onResume() {
         super.onResume()
-        webView.loadPrivacyPolicy("https://rotyik.top/terms6")
+        webView.loadPrivacyPolicy("https://rotyik.top/terms7")
     }
 }
 
