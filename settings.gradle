@@ -14,7 +14,10 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "JuicyMatch"
-include ':app'
+include ':01_cricket'
+include ':02_football'
+
+
 include ':zsdk'
 include ':natyengine'
 

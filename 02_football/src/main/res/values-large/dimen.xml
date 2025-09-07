@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text size -->
+    <dimen name="txt_dialog_small_size">24sp</dimen>
+    <dimen name="txt_dialog_size">36sp</dimen>
+    <dimen name="txt_dialog_large_size">42sp</dimen>
+
+    <dimen name="txt_state_level_size">12sp</dimen>
+    <dimen name="txt_state_target_size">14sp</dimen>
+    <dimen name="txt_state_score_size">18sp</dimen>
+    <dimen name="txt_state_booster_size">21sp</dimen>
+    <dimen name="txt_state_move_size">33.6sp</dimen>
+
+    <dimen name="txt_level_size">30sp</dimen>
+
+    <!-- Button width -->
+    <dimen name="btn_large_width">192dp</dimen>
+    <dimen name="btn_width">144dp</dimen>
+    <dimen name="btn_small_width">96dp</dimen>
+    <dimen name="btn_round_width">60dp</dimen>
+    <dimen name="btn_booster_width">72dp</dimen>
+    <dimen name="btn_shop_width">156dp</dimen>
+
+    <!-- Image width -->
+    <dimen name="image_state_item">48dp</dimen>
+    <dimen name="image_state_target">36dp</dimen>
+    <dimen name="image_state_booster">30dp</dimen>
+
+    <dimen name="image_logo_width">420dp</dimen>
+    <dimen name="image_logo_bg_width">480dp</dimen>
+
+    <dimen name="image_star_small_width">24dp</dimen>
+    <dimen name="image_star_width">120dp</dimen>
+    <dimen name="image_star_large_width">156dp</dimen>
+    <dimen name="image_star_progress_width">300dp</dimen>
+
+    <dimen name="image_wheel_width">360dp</dimen>
+    <dimen name="image_wheel_pivot_width">84dp</dimen>
+    <dimen name="image_wheel_pointer_width">48dp</dimen>
+
+    <!-- Image height -->
+    <dimen name="image_game_board_height">120dp</dimen>
+    <dimen name="image_game_board_field_height">72dp</dimen>
+    <dimen name="image_map_board_height">96dp</dimen>
+    <dimen name="image_map_board_field_height">60dp</dimen>
+
+    <!-- Dialog width -->
+    <dimen name="dialog_small_width">300dp</dimen>
+    <dimen name="dialog_width">360dp</dimen>
+    <dimen name="dialog_large_width">420dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="margin_5">7dp</dimen>
+    <dimen name="margin_10">14dp</dimen>
+    <dimen name="margin_20">28dp</dimen>
+    <dimen name="margin_30">42dp</dimen>
+    <dimen name="margin_negative_20">-28dp</dimen>
+    <dimen name="margin_negative_30">-42dp</dimen>
+    <dimen name="margin_negative_40">-56dp</dimen>
+
+    <!-- Ratio in 1 : 1.2 : 1.6 for view -->
+    <!-- Ratio in 1 : 1.4 : 1.8 for margin -->
+</resources>

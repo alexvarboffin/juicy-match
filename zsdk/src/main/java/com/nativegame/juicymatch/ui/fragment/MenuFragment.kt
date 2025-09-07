@@ -65,14 +65,14 @@ class MenuFragment  //--------------------------------------------------------
         btnFaq.setOnClickListener {
             openInCustomTab(
                 view.context,
-                "https://rotyik.top/FAQ7"
+                "https://mixers.top/FAQ9"
             )
         }
         val btnPrivacy = view.findViewById<View>(R.id.btnPrivacy) as GameButton
         btnPrivacy.setOnClickListener {
             openInCustomTab(
                 view.context,
-                "https://rotyik.top/Privacy7"
+                "https://mixers.top/Privacy9"
             )
         }
 
