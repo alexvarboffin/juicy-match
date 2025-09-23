@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unblock Puzzle - Play Free Puzzle Game Online</title>
+    <meta name="description" content="Unblock Me is a fun and classic addictive puzzle game. The goal is to unblock the red block out of the board by sliding the other blocks out of its way with the minimal amount of moves. Unblock Me has 250 levels. Play this free game online or on mobile phone.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link id="favicon" rel="shortcut icon" href="favicon.ico" />
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap/jquery1.11.3.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+
+    <script src="bootstrap/jquery-ui.min.js"></script>
+    
+    <script src="assets/levels/unblockme/levels.js"></script>
+    <link rel="stylesheet" type="text/css" href='inc/styles.css' />
+    <!--<script type='text/javascript' src='inc/jquery.js'></script>-->
+    <script type='text/javascript' src='../../js/usercookies.js'></script>
+    <script type='text/javascript' src='inc/layout.js'></script>
+    <script type='text/javascript' src="canvas.js"></script>
+    <script type='text/javascript' src='guess.min.js'></script>
+
+    <script type='text/javascript' src="../../ads/ads.js"></script>
+    
+    <style>
+        /*div.labels {
+            display		:block;
+            position	:absolute;
+            font-size	:18pt;
+            color		:white;
+            text-align  :center;
+            z-index		:1000;
+        }
+        div.labels img {
+            width:72px; height:72px;
+        }
+        img.c { position:absolute; }
+        img.unavail { opacity:0.5; }*/
+
+        body {
+            min-height: 100%;
+            background-image: url(inc/background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        html {
+            height: 100%;
+            min-height: 100%;
+        }
+
+        button.selectedButton {
+            border: 2px solid red;
+        }
+
+        button.fadeButton {
+            /*opacity:0;*/
+            visibility: hidden;
+        }
+
+        button.showButton {
+            opacity: 1;
+        }
+
+        #wrapper {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            
+        }
+
+        /*#canvas, #canvasTemp {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: 1px solid blue;
+            width: 100%;
+            height: 100%;
+            border-radius:50%;
+        }
+
+        #canvasTemp {
+            border: 0px solid red;
+        }
+
+        #canvas {
+            border: 0px solid red;
+        }*/
+
+    </style>
+    <script>
+        $(window).resize(function () {
+            //displayAds();
+        });
+
+        function displayAds() {
+            var width = $(window).width();
+            var height = $(window).height();
+
+            if (width >= 1024 && width > height) {
+                $(".adsbygoogle").show();
+            }
+            else {
+                $(".adsbygoogle").hide();
+            }
+        }
+    </script>
+    <meta property="og:title" content="Unblock Me" />
+    <meta property="og:description" content="Unblock Me is a fun and classic addictive puzzle game. The goal is to unblock the red block out of the board by sliding the other blocks out of its way with the minimal amount of moves. Unblock Me has 250 levels. Play this free game online or on mobile phone." />
+    <meta property="og:url" content="https://www.xpgameplus.com/games/unblockme/index.html" />
+    <meta property="og:image" content="https://www.xpgameplus.com/img/256/UnblockMe.jpg" />
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5696fce5dc3c1702" async="async"></script>
+</head>
+
+<body>
+
+    <div id="content" style="background-image:url(assets/image/gamescreen_bg.png)">
+
+        <div style="height: 35px; padding-left: 2px; font-size: 25px; color: white;background-image:url(assets/image/top_bar_bg.png)">
+            <span id="displayedLevel">Level: 1</span>
+            <span style="position:absolute;right:1px;font-size:20px;">
+
+                <button id="buttonMenu" type="button" class="btn btn-default btn-sm" title="Choose Level">
+                    <span class="glyphicon glyphicon-list"></span>
+                </button>
+
+                <button id="buttonRefresh" type="button" class="btn btn-default btn-sm" title="Refresh">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                </button>
+
+                <button id="buttonAudio" type="button" class="btn btn-default btn-sm" title="Sound">
+                    <span class="glyphicon glyphicon-volume-up"></span>
+                </button>
+
+            </span>
+        </div>
+
+        <div id='board' style='left:0px; top:35px; width:450px; height:800px; overflow:hidden;margin:auto;'>
+
+            <div style="width:100%;text-align:center;height:450px; position:relative;">
+                <div id="wordShake" style="font-size:20px;font-weight:bold;color:white;line-height:30px;">
+                    <span id="score" style="border-radius:4px;background-color:red;padding-left:4px;padding-right:4px;">0</span>
+                </div>
+                <div id="wrapper">
+                    <canvas id="canvas" width=450 height=450  ></canvas>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

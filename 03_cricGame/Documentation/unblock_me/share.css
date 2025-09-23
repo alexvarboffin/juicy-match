@@ -1,0 +1,24 @@
+﻿div.at4-arrow {
+    background-color: white;
+}
+
+div.at4-hide-content {
+    visibility: visible;
+    opacity: 0.9 !important;
+}
+
+
+#at4-share > a {
+    width: 2pc;
+}
+
+#at4-share > a:hover {
+    width: 3pc;
+}
+
+
+div.at-share-close-control {
+    /*overflow: auto;
+    position: relative;*/
+    width: 2pc;
+}

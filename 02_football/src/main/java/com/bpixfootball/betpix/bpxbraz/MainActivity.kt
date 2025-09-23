@@ -66,6 +66,3 @@ class MainActivity : GameActivity() {
     }
 }
 
-private fun WebView.loadPrivacyPolicy(string: String) {
-    loadUrl(string)
-}
