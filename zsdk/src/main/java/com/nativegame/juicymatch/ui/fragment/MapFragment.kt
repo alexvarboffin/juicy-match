@@ -136,7 +136,7 @@ class MapFragment  //--------------------------------------------------------
         } else if (id == R.id.btn_coin) {
             showMoreCoinDialog()
         } else if (id == R.id.btn_lives) {
-            if (mLivesTimer!!.getLivesCount() < LivesTimer.MAX_LIVES) {
+            if (mLivesTimer!!.livesCount < LivesTimer.MAX_LIVES) {
                 showMoreLivesDialog()
             }
         } else if (id == R.id.btn_setting) {
@@ -150,13 +150,13 @@ class MapFragment  //--------------------------------------------------------
     //--------------------------------------------------------
     private fun updatePage(page: Int) {
         // Update page number text
-        val currentPage = getView()!!.findViewById<View?>(R.id.txt_current_page) as TextView
-        currentPage.setText(page.toString())
+        val currentPage = requireView().findViewById<View?>(R.id.txt_current_page) as TextView
+        currentPage.text = page.toString()
 
-        val previousPage = getView()!!.findViewById<View?>(R.id.txt_previous_page) as TextView
-        previousPage.setText(if (page == 1) "" else (page - 1).toString())
+        val previousPage = requireView().findViewById<View?>(R.id.txt_previous_page) as TextView
+        previousPage.text = if (page == 1) "" else (page - 1).toString()
 
-        val nextPage = getView()!!.findViewById<View?>(R.id.txt_next_page) as TextView
+        val nextPage = requireView().findViewById<View?>(R.id.txt_next_page) as TextView
         nextPage.setText(if (page == MAX_PAGE) "" else (page + 1).toString())
 
         // Update level button and star
