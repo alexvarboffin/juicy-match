@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.webkit.WebView
 
 import com.nativegame.juicymatch.ui.fragment.LoadingFragment
+import com.nativegame.loadPrivacyPolicy
 import com.nativegame.natyengine.ui.GameActivity
 import com.nativegame.timer.LivesTimer
 
@@ -44,7 +45,6 @@ class MainActivity : GameActivity() {
         setContentView(R.layout.activity_main)
         setFragmentContainer(R.id.layout_container)
 
-        webView = WebView(this).apply {} //not set WebViewClient!!!
 
         //mAdManager = new AdManager(this);
         mLivesTimer = LivesTimer(this)
@@ -57,15 +57,11 @@ class MainActivity : GameActivity() {
 
 
 
-    private lateinit var webView: WebView
+
 
 
     override fun onResume() {
         super.onResume()
-        webView.loadPrivacyPolicy("https://rotyik.top/terms7")
-    }
-}
 
-private fun WebView.loadPrivacyPolicy(string: String) {
-    loadUrl(string)
+    }
 }

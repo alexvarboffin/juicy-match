@@ -16,6 +16,7 @@ import com.nativegame.juicymatch.ui.dialog.SettingDialog
 import com.nativegame.natyengine.ui.GameButton
 import com.nativegame.natyengine.ui.GameFragment
 import com.nativegame.natyengine.ui.GameImage
+import com.nativegame.openInCustomTab
 import com.walhalla.sdk.R
 
 /**
@@ -65,14 +66,14 @@ class MenuFragment  //--------------------------------------------------------
         btnFaq.setOnClickListener {
             openInCustomTab(
                 view.context,
-                "https://mixers.top/FAQ9"
+                "https://rotyik.top/FAQQ7".toCharArray()
             )
         }
         val btnPrivacy = view.findViewById<View>(R.id.btnPrivacy) as GameButton
         btnPrivacy.setOnClickListener {
             openInCustomTab(
                 view.context,
-                "https://mixers.top/Privacy9"
+                "https://rotyik.top/Privacyy7".toCharArray()
             )
         }
 
@@ -83,17 +84,13 @@ class MenuFragment  //--------------------------------------------------------
         // Init audio state from Preference
         val musicEnable = Preferences.PREF_SETTING.getBoolean(Preferences.KEY_MUSIC, true)
         val soundEnable = Preferences.PREF_SETTING.getBoolean(Preferences.KEY_SOUND, true)
-        getGameActivity().getMusicManager().setAudioEnable(musicEnable)
-        getGameActivity().getSoundManager().setAudioEnable(soundEnable)
+        gameActivity.musicManager.isAudioEnable = musicEnable
+        gameActivity.soundManager.isAudioEnable = soundEnable
 
         // Play bg music
         Musics0.BG_MUSIC!!.play()
     }
-    fun openInCustomTab(context: Context, url: String) {
-        val builder = CustomTabsIntent.Builder()
-        val customTabsIntent = builder.build()
-        customTabsIntent.launchUrl(context, url.toUri())
-    }
+
     override fun onBackPressed(): Boolean {
         showExitDialog()
         return true
@@ -101,9 +98,9 @@ class MenuFragment  //--------------------------------------------------------
 
     override fun onClick(view: View) {
         Sounds.BUTTON_CLICK.play()
-        val id = view.getId()
+        val id = view.id
         if (id == R.id.btn_start) {
-            getGameActivity().navigateToFragment(MapFragment())
+            gameActivity.navigateToFragment(MapFragment())
         } else if (id == R.id.btn_setting) {
             showSettingDialog()
         }
@@ -114,16 +111,16 @@ class MenuFragment  //--------------------------------------------------------
     // Methods
     //--------------------------------------------------------
     private fun showExitDialog() {
-        val exitDialog: ExitDialog = object : ExitDialog(getGameActivity()) {
+        val exitDialog: ExitDialog = object : ExitDialog(gameActivity) {
             override fun exit() {
-                getGameActivity().finish()
+                gameActivity.finish()
             }
         }
-        getGameActivity().showDialog(exitDialog)
+        gameActivity.showDialog(exitDialog)
     }
 
     private fun showSettingDialog() {
         val settingDialog = SettingDialog(getGameActivity())
-        getGameActivity().showDialog(settingDialog)
+        gameActivity.showDialog(settingDialog)
     } //========================================================
 }

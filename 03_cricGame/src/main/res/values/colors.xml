@@ -14,4 +14,11 @@
     <color name="black_20">#33000000</color>
     <color name="black_60">#99000000</color>
     <color name="black_80">#CC000000</color>
+
+    <!-- Premium Palette -->
+    <color name="PremiumGold">#FFD4AF37</color>
+    <color name="Charcoal">#FF121212</color>
+    <color name="OffWhite">#FFFAFAFA</color>
+    <color name="GoldDark">#FFB8860B</color>
+    <color name="GoldLight">#FFD4AF37</color>
 </resources>
