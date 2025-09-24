@@ -7,7 +7,7 @@ object Uniqualizer {
     private const val projectRoot = "C:\\Users\\combo\\Desktop\\juicy-match"
 
     fun run() {
-        println("=== Starting Uniqualizer Run ===")
+        println("=== Starting Uniqualizer Run (First Time on Clean Directory) ===")
         processDirectory(
             dir = File(projectRoot, "zsdk/src/main/res/layout"),
             resourceType = "layout",
@@ -19,11 +19,10 @@ object Uniqualizer {
         processDirectory(
             dir = File(projectRoot, "zsdk/src/main/res/raw"),
             resourceType = "raw",
-            rules = mapOf(
-                "" to "sound_effect_" // Default for all raw files
-            ),
+            rules = mapOf(), // No prefix-based rules for raw
             extensionRules = mapOf(
-                "mp3" to "music_"
+                "mp3" to "music_",
+                "wav" to "sound_effect_"
             )
         )
         println("=== Uniqualizer Run Finished ===")
@@ -35,7 +34,7 @@ object Uniqualizer {
         rules: Map<String, String>,
         extensionRules: Map<String, String> = emptyMap()
     ) {
-        println("\n--- Processing directory: ${dir.path} ---")
+        println("\n--- Processing directory: " + dir.path + " ---")
         if (!dir.exists() || !dir.isDirectory) {
             println("ERROR: Directory not found or is not a directory.")
             return
@@ -43,56 +42,73 @@ object Uniqualizer {
 
         dir.listFiles()?.forEach { file ->
             val oldName = file.nameWithoutExtension
-            var newName: String? = null
-            var nameForCodeUpdate: String = oldName
+            var baseName = oldName
+            var prefix = ""
 
-            val processedRegex = "(.+)_([a-z0-9]{6})".toRegex()
-            val match = processedRegex.find(oldName)
-
-            if (match != null) {
-                // File has been processed before, just update the random part
-                val (baseName, _) = match.destructured
-                newName = "${baseName}_${generateRandomString(6)}"
-            } else {
-                // First time processing
-                for ((oldPrefix, newPrefix) in rules) {
-                    val prefixToApply = extensionRules[file.extension] ?: rules[""] ?: newPrefix
-                    if (oldName.startsWith(oldPrefix)) {
-                        val baseName = oldName.removePrefix(oldPrefix)
-                        newName = "${prefixToApply}${baseName}_${generateRandomString(6)}"
+            if (resourceType == "layout") {
+                for ((oldP, newP) in rules) {
+                    if (oldName.startsWith(oldP)) {
+                        prefix = newP
+                        baseName = oldName.removePrefix(oldP)
                         break
                     }
                 }
-            }
-
-            if (newName != null) {
-                val newFile = File(file.parent, "$newName.${file.extension}")
-                if (file.renameTo(newFile)) {
-                    println("Renamed ${file.name} to ${newFile.name}")
-                    updateCodeReferences(resourceType, nameForCodeUpdate, newName)
+            } else if (resourceType == "raw") {
+                prefix = extensionRules[file.extension] ?: "sound_effect_" // Default for others
+                if (prefix == "sound_effect_") {
+                    // No base name change if it's a default
                 } else {
-                    println("ERROR: Failed to rename ${file.name}")
+                    baseName = oldName // Keep full name if it's music
                 }
             }
+
+            val newName = if (prefix.isNotEmpty()) {
+                if (resourceType == "raw" && extensionRules.containsValue(prefix)) {
+                     "${prefix}${baseName}_${generateRandomString(6)}"
+                } else {
+                    "${prefix}${baseName}_${generateRandomString(6)}"
+                }
+            } else {
+                "${baseName}_${generateRandomString(6)}"
+            }
+
+            // Correction for raw files where prefix is the new name
+            val finalNewName = if (resourceType == "raw" && extensionRules.containsKey(file.extension)) {
+                "${prefix}${oldName}_${generateRandomString(6)}"
+            } else {
+                newName
+            }
+
+            updateFile(file, oldName, finalNewName, resourceType)
+        }
+    }
+
+    private fun updateFile(file: File, oldName: String, newName: String, resourceType: String) {
+        val newFile = File(file.parent, newName + "." + file.extension)
+        if (file.renameTo(newFile)) {
+            println("Renamed " + file.name + " to " + newFile.name)
+            updateCodeReferences(resourceType, oldName, newName)
+        } else {
+            println("ERROR: Failed to rename " + file.name)
         }
     }
 
     private fun updateCodeReferences(resourceType: String, oldName: String, newName: String) {
-        val oldReference = "R.$resourceType.$oldName"
-        val newReference = "R.$resourceType.$newName"
+        val oldRef = "R." + resourceType + "." + oldName
+        val newRef = "R." + resourceType + "." + newName
 
-        println("  Updating references from $oldReference to $newReference")
+        println("  Updating references from " + oldRef + " to " + newRef)
         File(projectRoot).walkTopDown().forEach { file ->
-            if (file.isFile && (file.extension == "kt" || file.extension == "java")) {
+            if (file.isFile && (file.extension == "kt" || file.extension == "java" || file.extension == "xml")) {
                 try {
-                    var content = file.readText()
-                    if (content.contains(oldReference)) {
-                        content = content.replace(oldReference, newReference)
-                        file.writeText(content)
-                        println("    Updated reference in ${file.relativeTo(File(projectRoot))}")
+                    val content = file.readText()
+                    if (content.indexOf(oldRef) != -1) {
+                        val newContent = content.replace(oldRef, newRef)
+                        file.writeText(newContent)
+                        println("    Updated reference in " + file.relativeTo(File(projectRoot)))
                     }
                 } catch (e: Exception) {
-                    println("    ERROR: Could not process file ${file.path}: ${e.message}")
+                    println("    ERROR: Could not process file " + file.path + ": " + e.message)
                 }
             }
         }
