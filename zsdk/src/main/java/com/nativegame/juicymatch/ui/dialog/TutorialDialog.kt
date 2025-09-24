@@ -30,7 +30,7 @@ open class TutorialDialog(activity: GameActivity) : BaseDialog(activity), View.O
 
         // Init tutorial text
         val txtTutorial = findViewById(R.id.kwk_txt_tutorial) as TextView
-        txtTutorial.setText(ResourceUtils.getString(activity, tutorialType.stringId))
+        txtTutorial.text = ResourceUtils.getString(activity, tutorialType.stringId)
 
         // Init button
         val btnPlay = findViewById(R.id.btn_play) as GameButton
