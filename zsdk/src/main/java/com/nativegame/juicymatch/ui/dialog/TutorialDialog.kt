@@ -26,11 +26,11 @@ open class TutorialDialog(activity: GameActivity) : BaseDialog(activity), View.O
         // Init tutorial image
         val tutorialType = Level.LEVEL_DATA.tutorialType
         val imageTutorial = findViewById(R.id.image_tutorial) as ImageView
-        imageTutorial.setImageResource(tutorialType.getDrawableId())
+        imageTutorial.setImageResource(tutorialType.drawableId)
 
         // Init tutorial text
         val txtTutorial = findViewById(R.id.kwk_txt_tutorial) as TextView
-        txtTutorial.setText(ResourceUtils.getString(activity, tutorialType.getStringId()))
+        txtTutorial.setText(ResourceUtils.getString(activity, tutorialType.stringId))
 
         // Init button
         val btnPlay = findViewById(R.id.btn_play) as GameButton
