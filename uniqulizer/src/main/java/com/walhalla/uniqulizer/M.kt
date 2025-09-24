@@ -2,113 +2,107 @@ package com.walhalla.uniqulizer
 
 import java.io.File
 
-object LayoutUniqualizer {
+object Uniqualizer {
 
     private const val projectRoot = "C:\\Users\\combo\\Desktop\\juicy-match"
-    private const val module = "zsdk"
-    private val layoutDir = File(projectRoot, "$module/src/main/res/layout")
-
-    private val renamingMap = mapOf(
-        "dialog_" to "dialog_abc_",
-        "activity_" to "match_activity_"
-    )
 
     fun run() {
-        println("Starting layout refactoring...")
-        renameLayoutFiles()
-        println("Layout refactoring complete.")
+        println("=== Starting Uniqualizer Run ===")
+        processDirectory(
+            dir = File(projectRoot, "zsdk/src/main/res/layout"),
+            resourceType = "layout",
+            rules = mapOf(
+                "dialog_" to "dialog_abc_",
+                "activity_" to "match_activity_"
+            )
+        )
+        processDirectory(
+            dir = File(projectRoot, "zsdk/src/main/res/raw"),
+            resourceType = "raw",
+            rules = mapOf(
+                "" to "sound_effect_" // Default for all raw files
+            ),
+            extensionRules = mapOf(
+                "mp3" to "music_"
+            )
+        )
+        println("=== Uniqualizer Run Finished ===")
     }
 
-    private fun renameLayoutFiles() {
-        layoutDir.listFiles()?.forEach {
-            renamingMap.forEach { (oldPrefix, newPrefix) ->
-                if (it.name.startsWith(oldPrefix)) {
-                    val oldNameWithoutExtension = it.nameWithoutExtension
-                    val newName = it.name.replaceFirst(oldPrefix, newPrefix)
-                    val newFile = File(it.parent, newName)
-
-                    if (it.renameTo(newFile)) {
-                        println("Renamed ${it.name} to $newName")
-                        updateCodeReferences(oldNameWithoutExtension, newName.removeSuffix(".xml"))
-                    } else {
-                        println("ERROR: Failed to rename ${it.name}")
-                    }
-                }
-            }
+    private fun processDirectory(
+        dir: File,
+        resourceType: String,
+        rules: Map<String, String>,
+        extensionRules: Map<String, String> = emptyMap()
+    ) {
+        println("\n--- Processing directory: ${dir.path} ---")
+        if (!dir.exists() || !dir.isDirectory) {
+            println("ERROR: Directory not found or is not a directory.")
+            return
         }
-    }
 
-    private fun updateCodeReferences(oldName: String, newName: String) {
-        val oldReference = "." + oldName
-        val newReference = "." + newName
+        dir.listFiles()?.forEach { file ->
+            val oldName = file.nameWithoutExtension
+            var newName: String? = null
+            var nameForCodeUpdate: String = oldName
 
-        File(projectRoot).walkTopDown().forEach {
-            if (it.isFile && (it.extension == "kt" || it.extension == "java" || it.extension == "xml")) {
-                try {
-                    var content = it.readText()
-                    if (content.contains(oldReference)) {
-                        content = content.replace(oldReference, newReference)
-                        it.writeText(content)
-                        println("  Updated reference in ${it.relativeTo(File(projectRoot))}")
-                    }
-                } catch (e: Exception) {
-                    println("ERROR: Could not process file ${it.path}: ${e.message}")
-                }
-            }
-        }
-    }
-}
+            val processedRegex = "(.+)_([a-z0-9]{6})".toRegex()
+            val match = processedRegex.find(oldName)
 
-object RawUniqualizer {
-
-    private const val projectRoot = "C:\\Users\\combo\\Desktop\\juicy-match"
-    private const val module = "zsdk"
-    private val rawDir = File(projectRoot, "$module/src/main/res/raw")
-
-    fun run() {
-        println("Starting raw resources refactoring...")
-        renameRawFiles()
-        println("Raw resources refactoring complete.")
-    }
-
-    private fun renameRawFiles() {
-        rawDir.listFiles()?.forEach {
-            val oldNameWithoutExtension = it.nameWithoutExtension
-            val newPrefix = when (it.extension) {
-                "mp3" -> "music_"
-                "wav" -> "sound_effect_"
-                else -> ""
-            }
-            val newName = newPrefix + it.name
-            val newFile = File(it.parent, newName)
-
-            if (it.renameTo(newFile)) {
-                println("Renamed ${it.name} to $newName")
-                updateCodeReferences(oldNameWithoutExtension, newName.removeSuffix(".${it.extension}"))
+            if (match != null) {
+                // File has been processed before, just update the random part
+                val (baseName, _) = match.destructured
+                newName = "${baseName}_${generateRandomString(6)}"
             } else {
-                println("ERROR: Failed to rename ${it.name}")
+                // First time processing
+                for ((oldPrefix, newPrefix) in rules) {
+                    val prefixToApply = extensionRules[file.extension] ?: rules[""] ?: newPrefix
+                    if (oldName.startsWith(oldPrefix)) {
+                        val baseName = oldName.removePrefix(oldPrefix)
+                        newName = "${prefixToApply}${baseName}_${generateRandomString(6)}"
+                        break
+                    }
+                }
+            }
+
+            if (newName != null) {
+                val newFile = File(file.parent, "$newName.${file.extension}")
+                if (file.renameTo(newFile)) {
+                    println("Renamed ${file.name} to ${newFile.name}")
+                    updateCodeReferences(resourceType, nameForCodeUpdate, newName)
+                } else {
+                    println("ERROR: Failed to rename ${file.name}")
+                }
             }
         }
     }
 
-    private fun updateCodeReferences(oldName: String, newName: String) {
-        val oldReference = "R.raw.$oldName"
-        val newReference = "R.raw.$newName"
+    private fun updateCodeReferences(resourceType: String, oldName: String, newName: String) {
+        val oldReference = "R.$resourceType.$oldName"
+        val newReference = "R.$resourceType.$newName"
 
-        File(projectRoot).walkTopDown().forEach {
-            if (it.isFile && (it.extension == "kt" || it.extension == "java")) {
+        println("  Updating references from $oldReference to $newReference")
+        File(projectRoot).walkTopDown().forEach { file ->
+            if (file.isFile && (file.extension == "kt" || file.extension == "java")) {
                 try {
-                    var content = it.readText()
+                    var content = file.readText()
                     if (content.contains(oldReference)) {
                         content = content.replace(oldReference, newReference)
-                        it.writeText(content)
-                        println("  Updated reference in ${it.relativeTo(File(projectRoot))}")
+                        file.writeText(content)
+                        println("    Updated reference in ${file.relativeTo(File(projectRoot))}")
                     }
                 } catch (e: Exception) {
-                    println("ERROR: Could not process file ${it.path}: ${e.message}")
+                    println("    ERROR: Could not process file ${file.path}: ${e.message}")
                 }
             }
         }
+    }
+
+    private fun generateRandomString(length: Int): String {
+        val allowedChars = ('a'..'z') + ('0'..'9')
+        return (1..length)
+            .map { allowedChars.random() }
+            .joinToString("")
     }
 }
 
@@ -116,8 +110,7 @@ class M {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            //LayoutUniqualizer.run()
-            RawUniqualizer.run()
+            Uniqualizer.run()
         }
     }
 }
