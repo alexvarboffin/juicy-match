@@ -46,7 +46,7 @@ public class WheelDialog extends BaseDialog implements AdManager.AdRewardListene
         btnPlay.setOnClickListener(this);
 
         // Init text
-        GameText txtBonus = (GameText) findViewById(R.id.txt_wheel);
+        GameText txtBonus = (GameText) findViewById(R.id.kwk_txt_wheel);
         txtBonus.popUp(200, 500);
 
         // Check is wheel ready

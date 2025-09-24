@@ -34,7 +34,7 @@ public class TutorialDialog extends BaseDialog implements View.OnClickListener {
         imageTutorial.setImageResource(tutorialType.getDrawableId());
 
         // Init tutorial text
-        TextView txtTutorial = (TextView) findViewById(R.id.txt_tutorial);
+        TextView txtTutorial = (TextView) findViewById(R.id.kwk_txt_tutorial);
         txtTutorial.setText(ResourceUtils.getString(activity, tutorialType.getStringId()));
 
         // Init button

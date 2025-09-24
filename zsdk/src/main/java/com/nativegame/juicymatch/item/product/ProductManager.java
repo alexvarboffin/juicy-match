@@ -28,10 +28,10 @@ public class ProductManager {
         Product productHammer = new Product(Item.HAMMER, 70, R.drawable.ui_booster_hammer, R.drawable.ui_btn_price_70);
 
         // Init product description
-        productWatchAd.setDescription(ResourceUtils.getString(activity, R.string.txt_coin));
-        productGlove.setDescription(ResourceUtils.getString(activity, R.string.txt_glove));
-        productBomb.setDescription(ResourceUtils.getString(activity, R.string.txt_bomb));
-        productHammer.setDescription(ResourceUtils.getString(activity, R.string.txt_hammer));
+        productWatchAd.setDescription(ResourceUtils.getString(activity, R.string.kwk_txt_coin));
+        productGlove.setDescription(ResourceUtils.getString(activity, R.string.kwk_txt_glove));
+        productBomb.setDescription(ResourceUtils.getString(activity, R.string.kwk_txt_bomb));
+        productHammer.setDescription(ResourceUtils.getString(activity, R.string.kwk_txt_hammer));
 
         // Add product to list
         mProducts.add(productWatchAd);

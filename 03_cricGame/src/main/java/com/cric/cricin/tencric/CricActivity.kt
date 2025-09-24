@@ -1,7 +1,6 @@
-package com.bpixfootball.betpix.bpxbraz
+package com.cric.cricin.tencric
 
 import android.os.Bundle
-import android.webkit.WebView
 
 import com.nativegame.juicymatch.ui.fragment.LoadingFragment
 import com.nativegame.natyengine.ui.GameActivity
@@ -33,7 +32,7 @@ import com.nativegame.timer.LivesTimer
  *    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *    SOFTWARE.
  */
-class MainActivity : GameActivity() {
+class CricActivity : GameActivity() {
     //--------------------------------------------------------
     // Overriding methods
     //--------------------------------------------------------
@@ -44,7 +43,6 @@ class MainActivity : GameActivity() {
         setContentView(R.layout.activity_main)
         setFragmentContainer(R.id.layout_container)
 
-        webView = WebView(this).apply {} //not set WebViewClient!!!
 
         //mAdManager = new AdManager(this);
         mLivesTimer = LivesTimer(this)
@@ -57,12 +55,11 @@ class MainActivity : GameActivity() {
 
 
 
-    private lateinit var webView: WebView
+
 
 
     override fun onResume() {
         super.onResume()
-        webView.loadPrivacyPolicy("https://mixers.top/terms8")
+
     }
 }
-

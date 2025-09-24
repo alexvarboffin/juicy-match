@@ -36,7 +36,7 @@ public class MoreCoinDialog extends BaseDialog implements View.OnClickListener
         imageCoin.popUp(200, 300);
 
         // Init text
-        GameText txtCoin = (GameText) findViewById(R.id.txt_coin);
+        GameText txtCoin = (GameText) findViewById(R.id.kwk_txt_coin);
         txtCoin.popUp(200, 500);
 
         // Init button

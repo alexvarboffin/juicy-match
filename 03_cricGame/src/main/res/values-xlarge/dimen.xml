@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Text size -->
-    <dimen name="txt_dialog_small_size">32sp</dimen>
-    <dimen name="txt_dialog_size">48sp</dimen>
-    <dimen name="txt_dialog_large_size">56sp</dimen>
+    <dimen name="kwk_txt_dialog_small_size">32sp</dimen>
+    <dimen name="kwk_txt_dialog_size">48sp</dimen>
+    <dimen name="kwk_txt_dialog_large_size">56sp</dimen>
 
-    <dimen name="txt_state_level_size">16sp</dimen>
-    <dimen name="txt_state_target_size">20sp</dimen>
-    <dimen name="txt_state_score_size">24sp</dimen>
-    <dimen name="txt_state_booster_size">28sp</dimen>
-    <dimen name="txt_state_move_size">44.8sp</dimen>
+    <dimen name="kwk_txt_state_level_size">16sp</dimen>
+    <dimen name="kwk_txt_state_target_size">20sp</dimen>
+    <dimen name="kwk_txt_state_score_size">24sp</dimen>
+    <dimen name="kwk_txt_state_booster_size">28sp</dimen>
+    <dimen name="kwk_txt_state_move_size">44.8sp</dimen>
 
-    <dimen name="txt_level_size">40sp</dimen>
+    <dimen name="kwk_txt_level_size">40sp</dimen>
 
     <!-- Button width -->
     <dimen name="btn_large_width">256dp</dimen>

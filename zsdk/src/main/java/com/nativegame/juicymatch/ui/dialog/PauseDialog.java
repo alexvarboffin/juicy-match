@@ -32,8 +32,8 @@ public class PauseDialog extends BaseDialog implements View.OnClickListener {
         setExitAnimationId(R.anim.exit_to_center);
 
         // Init text
-        TextView txtLevel = (TextView) findViewById(R.id.txt_level);
-        txtLevel.setText(ResourceUtils.getString(activity, R.string.txt_level, Level.LEVEL_DATA.getLevel()));
+        TextView txtLevel = (TextView) findViewById(R.id.kwk_txt_level);
+        txtLevel.setText(ResourceUtils.getString(activity, R.string.kwk_txt_level, Level.LEVEL_DATA.getLevel()));
 
         // Init button
         GameButton btnMusic = (GameButton) findViewById(R.id.btn_music);

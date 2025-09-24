@@ -32,8 +32,8 @@ public class ScoreDialog extends BaseDialog implements View.OnClickListener {
         setExitAnimationId(android.R.anim.fade_out);
 
         // Init text
-        TextView txtLevel = (TextView) findViewById(R.id.txt_level);
-        txtLevel.setText(ResourceUtils.getString(activity, R.string.txt_level, Level.LEVEL_DATA.getLevel()));
+        TextView txtLevel = (TextView) findViewById(R.id.kwk_txt_level);
+        txtLevel.setText(ResourceUtils.getString(activity, R.string.kwk_txt_level, Level.LEVEL_DATA.getLevel()));
 
         // Init button
         GameButton button = (GameButton) findViewById(R.id.btn_next);
@@ -71,7 +71,7 @@ public class ScoreDialog extends BaseDialog implements View.OnClickListener {
         int score = Level.LEVEL_DATA.getScore();
 
         // Update score text
-        TextView txtScore = (TextView) findViewById(R.id.txt_final_score);
+        TextView txtScore = (TextView) findViewById(R.id.kwk_txt_final_score);
         ValueAnimator animator = ValueAnimator.ofFloat(score - 150, score);
         animator.setDuration(1500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

@@ -65,7 +65,7 @@ public class AdManager {
 //        }
 //
 //        AdRequest adRequest = new AdRequest.Builder().build();
-//        RewardedAd.load(mActivity, ResourceUtils.getString(mActivity, R.string.txt_admob_reward),
+//        RewardedAd.load(mActivity, ResourceUtils.getString(mActivity, R.string.kwk_txt_admob_reward),
 //                adRequest, new RewardedAdLoadCallback() {
 //                    @Override
 //                    public void onAdFailedToLoad(LoadAdError loadAdError) {

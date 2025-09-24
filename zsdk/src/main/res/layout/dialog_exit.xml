@@ -19,15 +19,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.nativegame.natyengine.ui.GameText
-        android:id="@+id/txt_exit"
+        android:id="@+id/kwk_txt_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_30"
         android:fontFamily="@font/baloo"
         android:gravity="center"
-        android:text="@string/txt_exit"
+        android:text="@string/kwk_txt_exit"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_dialog_size"
+        android:textSize="@dimen/kwk_txt_dialog_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/image_dialog"
         app:layout_constraintEnd_toEndOf="@id/image_dialog"
@@ -53,6 +53,6 @@
         app:layout_constraintDimensionRatio="5:2"
         app:layout_constraintEnd_toEndOf="@id/image_dialog"
         app:layout_constraintStart_toStartOf="@id/image_dialog"
-        app:layout_constraintTop_toBottomOf="@id/txt_exit" />
+        app:layout_constraintTop_toBottomOf="@id/kwk_txt_exit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

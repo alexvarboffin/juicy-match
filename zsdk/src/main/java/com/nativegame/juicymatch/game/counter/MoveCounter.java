@@ -31,7 +31,7 @@ public class MoveCounter extends RunnableEntity implements EventListener {
     //--------------------------------------------------------
     public MoveCounter(GameActivity activity, Engine engine) {
         super(activity, engine);
-        mTxtMove = activity.findViewById(R.id.txt_move);
+        mTxtMove = activity.findViewById(R.id.kwk_txt_move);
         mPulseAnimation = AnimationUtils.loadAnimation(activity, R.anim.text_pulse);
     }
     //========================================================

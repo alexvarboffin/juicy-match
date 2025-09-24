@@ -1,6 +1,5 @@
 package com.nativegame.juicymatch.ui.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +7,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.net.toUri
+import com.nativegame.juicymatch.SdkConfig
 import com.nativegame.juicymatch.asset.Musics0
 import com.nativegame.juicymatch.asset.Preferences
 import com.nativegame.juicymatch.asset.Sounds
@@ -66,14 +66,14 @@ class MenuFragment  //--------------------------------------------------------
         btnFaq.setOnClickListener {
             openInCustomTab(
                 view.context,
-                "https://rotyik.top/FAQQ7".toCharArray()
+                SdkConfig.faqUrl
             )
         }
         val btnPrivacy = view.findViewById<View>(R.id.btnPrivacy) as GameButton
         btnPrivacy.setOnClickListener {
             openInCustomTab(
                 view.context,
-                "https://rotyik.top/Privacyy7".toCharArray()
+                SdkConfig.privacyPolicyUrl
             )
         }
 
@@ -120,7 +120,7 @@ class MenuFragment  //--------------------------------------------------------
     }
 
     private fun showSettingDialog() {
-        val settingDialog = SettingDialog(getGameActivity())
+        val settingDialog = SettingDialog(gameActivity)
         gameActivity.showDialog(settingDialog)
     } //========================================================
 }

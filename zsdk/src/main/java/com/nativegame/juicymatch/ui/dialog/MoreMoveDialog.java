@@ -32,7 +32,7 @@ public class MoreMoveDialog extends BaseDialog implements View.OnClickListener {
         imageExtraMove.popUp(200, 300);
 
         // Init text
-        GameText txtExtraMove = (GameText) findViewById(R.id.txt_extra_move);
+        GameText txtExtraMove = (GameText) findViewById(R.id.kwk_txt_extra_move);
         txtExtraMove.popUp(200, 500);
 
         // Init button

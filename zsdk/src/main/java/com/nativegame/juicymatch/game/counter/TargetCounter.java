@@ -98,8 +98,8 @@ public class TargetCounter extends RunnableEntity implements EventListener {
     // Methods
     //--------------------------------------------------------
     private void initLevelText() {
-        TextView txtLevel = (TextView) mActivity.findViewById(R.id.txt_level);
-        txtLevel.setText(ResourceUtils.getString(mActivity, R.string.txt_level, Level.LEVEL_DATA.getLevel()));
+        TextView txtLevel = (TextView) mActivity.findViewById(R.id.kwk_txt_level);
+        txtLevel.setText(ResourceUtils.getString(mActivity, R.string.kwk_txt_level, Level.LEVEL_DATA.getLevel()));
     }
 
     private void initTargetImage() {
@@ -142,9 +142,9 @@ public class TargetCounter extends RunnableEntity implements EventListener {
     private void initTargetText() {
         List<Integer> targetCounts = Level.LEVEL_DATA.getTargetCounts();
         // Init target text from TargetType
-        TextView txtTargetA = (TextView) mActivity.findViewById(R.id.txt_target_01);
-        TextView txtTargetB = (TextView) mActivity.findViewById(R.id.txt_target_02);
-        TextView txtTargetC = (TextView) mActivity.findViewById(R.id.txt_target_03);
+        TextView txtTargetA = (TextView) mActivity.findViewById(R.id.kwk_txt_target_01);
+        TextView txtTargetB = (TextView) mActivity.findViewById(R.id.kwk_txt_target_02);
+        TextView txtTargetC = (TextView) mActivity.findViewById(R.id.kwk_txt_target_03);
         switch (targetCounts.size()) {
             case 1:
                 txtTargetB.setText(String.valueOf(targetCounts.get(0)));

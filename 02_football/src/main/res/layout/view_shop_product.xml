@@ -28,15 +28,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.nativegame.natyengine.ui.GameText
-        android:id="@+id/txt_product"
+        android:id="@+id/kwk_txt_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_5"
         android:fontFamily="@font/baloo"
         android:gravity="start"
-        android:text="@string/txt_hammer"
+        android:text="@string/kwk_txt_hammer"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_product_size"
+        android:textSize="@dimen/kwk_txt_state_product_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_product"

@@ -27,7 +27,7 @@ public class ErrorDialog extends BaseDialog implements View.OnClickListener {
         setExitAnimationId(R.anim.exit_to_center);
 
         // Init text
-        GameText txtError = (GameText) findViewById(R.id.txt_error);
+        GameText txtError = (GameText) findViewById(R.id.kwk_txt_error);
         txtError.popUp(200, 300);
 
         // Init button

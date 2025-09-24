@@ -48,40 +48,40 @@
         app:layout_constraintStart_toEndOf="@+id/btn_bomb" />
 
     <TextView
-        android:id="@+id/txt_hammer"
+        android:id="@+id/kwk_txt_hammer"
         android:layout_width="@dimen/image_state_booster"
         android:layout_height="@dimen/image_state_booster"
         android:background="@drawable/ui_item_field"
         android:fontFamily="@font/baloo"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_booster_size"
+        android:textSize="@dimen/kwk_txt_state_booster_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/btn_hammer"
         app:layout_constraintEnd_toEndOf="@id/btn_hammer" />
 
     <TextView
-        android:id="@+id/txt_bomb"
+        android:id="@+id/kwk_txt_bomb"
         android:layout_width="@dimen/image_state_booster"
         android:layout_height="@dimen/image_state_booster"
         android:background="@drawable/ui_item_field"
         android:fontFamily="@font/baloo"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_booster_size"
+        android:textSize="@dimen/kwk_txt_state_booster_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/btn_bomb"
         app:layout_constraintEnd_toEndOf="@id/btn_bomb" />
 
     <TextView
-        android:id="@+id/txt_gloves"
+        android:id="@+id/kwk_txt_gloves"
         android:layout_width="@dimen/image_state_booster"
         android:layout_height="@dimen/image_state_booster"
         android:background="@drawable/ui_item_field"
         android:fontFamily="@font/baloo"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_booster_size"
+        android:textSize="@dimen/kwk_txt_state_booster_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/btn_glove"
         app:layout_constraintEnd_toEndOf="@id/btn_glove" />

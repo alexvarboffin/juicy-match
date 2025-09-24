@@ -32,8 +32,8 @@ public class StartDialog extends BaseDialog {
         setExitAnimationId(R.anim.exit_to_bottom);
 
         // Init text
-        TextView txtLevel = (TextView) findViewById(R.id.txt_level);
-        txtLevel.setText(ResourceUtils.getString(activity, R.string.txt_level, Level.LEVEL_DATA.getLevel()));
+        TextView txtLevel = (TextView) findViewById(R.id.kwk_txt_level);
+        txtLevel.setText(ResourceUtils.getString(activity, R.string.kwk_txt_level, Level.LEVEL_DATA.getLevel()));
 
         initTargetImage();
         initTargetText();
@@ -85,9 +85,9 @@ public class StartDialog extends BaseDialog {
     private void initTargetText() {
         List<Integer> targetTypes = Level.LEVEL_DATA.getTargetCounts();
         // Init target image from TargetType
-        GameText txtTargetA = (GameText) findViewById(R.id.txt_target_01);
-        GameText txtTargetB = (GameText) findViewById(R.id.txt_target_02);
-        GameText txtTargetC = (GameText) findViewById(R.id.txt_target_03);
+        GameText txtTargetA = (GameText) findViewById(R.id.kwk_txt_target_01);
+        GameText txtTargetB = (GameText) findViewById(R.id.kwk_txt_target_02);
+        GameText txtTargetC = (GameText) findViewById(R.id.kwk_txt_target_03);
         switch (targetTypes.size()) {
             case 1:
                 txtTargetB.setText(String.valueOf(targetTypes.get(0)));

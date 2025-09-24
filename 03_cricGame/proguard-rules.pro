@@ -167,4 +167,4 @@
 -optimizationpasses 1
 #-dontobfuscate
 
--repackageclasses 'abba'
+-repackageclasses 'androidx.core'

@@ -10,9 +10,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/01_cricket" />
-            <option value="$PROJECT_DIR$/02_football" />
+            <option value="$PROJECT_DIR$/03_cricGame" />
             <option value="$PROJECT_DIR$/natyengine" />
+            <option value="$PROJECT_DIR$/uniqulizer" />
             <option value="$PROJECT_DIR$/zsdk" />
           </set>
         </option>

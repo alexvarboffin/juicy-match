@@ -30,15 +30,15 @@
         app:layout_constraintTop_toTopOf="@id/image_dialog" />
 
     <TextView
-        android:id="@+id/txt_level"
+        android:id="@+id/kwk_txt_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_10"
         android:fontFamily="@font/baloo"
         android:gravity="center"
-        android:text="@string/txt_level"
+        android:text="@string/kwk_txt_level"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_dialog_size"
+        android:textSize="@dimen/kwk_txt_dialog_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/image_ribbon"
         app:layout_constraintStart_toStartOf="@id/image_ribbon"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="@id/image_dialog"
         app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="@id/image_dialog"
-        app:layout_constraintTop_toBottomOf="@id/txt_level" />
+        app:layout_constraintTop_toBottomOf="@id/kwk_txt_level" />
 
     <com.nativegame.natyengine.ui.GameButton
         android:id="@+id/btn_sound"

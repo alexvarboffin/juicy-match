@@ -31,7 +31,7 @@ public class ScoreCounter extends RunnableEntity implements EventListener {
     //--------------------------------------------------------
     public ScoreCounter(GameActivity activity, Engine engine) {
         super(activity, engine);
-        mTxtScore = activity.findViewById(R.id.txt_score);
+        mTxtScore = activity.findViewById(R.id.kwk_txt_score);
         mPulseAnimation = AnimationUtils.loadAnimation(activity, R.anim.text_pulse);
     }
     //========================================================

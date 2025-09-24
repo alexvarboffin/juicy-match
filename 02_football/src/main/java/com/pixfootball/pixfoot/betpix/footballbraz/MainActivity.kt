@@ -1,10 +1,8 @@
-package com.fbcric.cricbd
+package com.pixfootball.pixfoot.betpix.footballbraz
 
 import android.os.Bundle
-import android.webkit.WebView
 
 import com.nativegame.juicymatch.ui.fragment.LoadingFragment
-import com.nativegame.loadPrivacyPolicy
 import com.nativegame.natyengine.ui.GameActivity
 import com.nativegame.timer.LivesTimer
 
@@ -58,10 +56,7 @@ class MainActivity : GameActivity() {
 
 
 
-
-
     override fun onResume() {
         super.onResume()
-
     }
 }

@@ -171,7 +171,7 @@ public class ShopDialog extends BaseDialog implements View.OnClickListener {
                 mImageField = view.findViewById(R.id.image_field);
                 mImageProduct = view.findViewById(R.id.image_product);
                 mBtnProduct = view.findViewById(R.id.btn_product);
-                mTxtProductDescription = view.findViewById(R.id.txt_product);
+                mTxtProductDescription = view.findViewById(R.id.kwk_txt_product);
             }
             //========================================================
 

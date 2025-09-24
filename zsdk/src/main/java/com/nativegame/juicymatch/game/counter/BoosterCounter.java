@@ -274,13 +274,13 @@ public class BoosterCounter extends RunnableEntity implements View.OnClickListen
     }
 
     private void updateText() {
-        TextView txtHammer = (TextView) mActivity.findViewById(R.id.txt_hammer);
+        TextView txtHammer = (TextView) mActivity.findViewById(R.id.kwk_txt_hammer);
         txtHammer.setText(mHammerCount == INFINITE ? SIGN_INFINITE : String.valueOf(mHammerCount));
 
-        TextView txtBomb = (TextView) mActivity.findViewById(R.id.txt_bomb);
+        TextView txtBomb = (TextView) mActivity.findViewById(R.id.kwk_txt_bomb);
         txtBomb.setText(mBombCount == INFINITE ? SIGN_INFINITE : String.valueOf(mBombCount));
 
-        TextView txtGlove = (TextView) mActivity.findViewById(R.id.txt_gloves);
+        TextView txtGlove = (TextView) mActivity.findViewById(R.id.kwk_txt_gloves);
         txtGlove.setText(mGloveCount == INFINITE ? SIGN_INFINITE : String.valueOf(mGloveCount));
     }
     //========================================================

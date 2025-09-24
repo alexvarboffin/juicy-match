@@ -104,45 +104,45 @@ public enum TutorialType {
     public int getStringId() {
         switch (this) {
             case MATCH_3:
-                return R.string.txt_tutorial_match_3;
+                return R.string.kwk_txt_tutorial_match_3;
             case MATCH_4:
-                return R.string.txt_tutorial_match_4;
+                return R.string.kwk_txt_tutorial_match_4;
             case MATCH_T:
-                return R.string.txt_tutorial_match_t;
+                return R.string.kwk_txt_tutorial_match_t;
             case MATCH_L:
-                return R.string.txt_tutorial_match_l;
+                return R.string.kwk_txt_tutorial_match_l;
             case MATCH_5:
-                return R.string.txt_tutorial_match_5;
+                return R.string.kwk_txt_tutorial_match_5;
             case COMBINE:
-                return R.string.txt_tutorial_combine;
+                return R.string.kwk_txt_tutorial_combine;
             case LOCK:
-                return R.string.txt_tutorial_lock;
+                return R.string.kwk_txt_tutorial_lock;
             case COOKIE:
-                return R.string.txt_tutorial_cookie;
+                return R.string.kwk_txt_tutorial_cookie;
             case CAKE:
-                return R.string.txt_tutorial_cake;
+                return R.string.kwk_txt_tutorial_cake;
             case CANDY:
-                return R.string.txt_tutorial_candy;
+                return R.string.kwk_txt_tutorial_candy;
             case PIE:
-                return R.string.txt_tutorial_pie;
+                return R.string.kwk_txt_tutorial_pie;
             case ICE:
-                return R.string.txt_tutorial_ice;
+                return R.string.kwk_txt_tutorial_ice;
             case HONEY:
-                return R.string.txt_tutorial_honey;
+                return R.string.kwk_txt_tutorial_honey;
             case STARFISH:
-                return R.string.txt_tutorial_starfish;
+                return R.string.kwk_txt_tutorial_starfish;
             case SHELL:
-                return R.string.txt_tutorial_shell;
+                return R.string.kwk_txt_tutorial_shell;
             case PIPE:
-                return R.string.txt_tutorial_pipe;
+                return R.string.kwk_txt_tutorial_pipe;
             case GENERATOR:
-                return R.string.txt_tutorial_generator;
+                return R.string.kwk_txt_tutorial_generator;
             case HAMMER:
-                return R.string.txt_tutorial_hammer;
+                return R.string.kwk_txt_tutorial_hammer;
             case BOMB:
-                return R.string.txt_tutorial_bomb;
+                return R.string.kwk_txt_tutorial_bomb;
             case GLOVE:
-                return R.string.txt_tutorial_glove;
+                return R.string.kwk_txt_tutorial_glove;
             default:
                 throw new IllegalArgumentException("TutorialType String not found!");
         }

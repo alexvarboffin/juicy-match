@@ -29,11 +29,11 @@ open class LevelDialog(activity: GameActivity) : BaseDialog(activity), View.OnCl
         setExitAnimationId(R.anim.exit_to_center)
 
         // Init level text
-        val txtLevel = findViewById(R.id.txt_level) as TextView
+        val txtLevel = findViewById(R.id.kwk_txt_level) as TextView
         txtLevel.setText(
             ResourceUtils.getString(
                 activity,
-                R.string.txt_level,
+                R.string.kwk_txt_level,
                 Level.LEVEL_DATA.level
             )
         )
@@ -134,9 +134,9 @@ open class LevelDialog(activity: GameActivity) : BaseDialog(activity), View.OnCl
     private fun initTargetText() {
         val targetTypes = Level.LEVEL_DATA.targetCounts
         // Init target image from TargetType
-        val txtTargetA = findViewById(R.id.txt_target_01) as GameText
-        val txtTargetB = findViewById(R.id.txt_target_02) as GameText
-        val txtTargetC = findViewById(R.id.txt_target_03) as GameText
+        val txtTargetA = findViewById(R.id.kwk_txt_target_01) as GameText
+        val txtTargetB = findViewById(R.id.kwk_txt_target_02) as GameText
+        val txtTargetC = findViewById(R.id.kwk_txt_target_03) as GameText
         when (targetTypes.size) {
             1 -> {
                 txtTargetB.setText(targetTypes.get(0).toString())

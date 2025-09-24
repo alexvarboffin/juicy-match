@@ -128,7 +128,7 @@ public class LivesTimer {
 
     private void updateLivesText() {
         // Update text
-        TextView txtLives = (TextView) mActivity.findViewById(R.id.txt_lives);
+        TextView txtLives = (TextView) mActivity.findViewById(R.id.kwk_txt_lives);
         txtLives.setText(String.valueOf(mLivesNum));
 
         // Update button
@@ -138,8 +138,8 @@ public class LivesTimer {
         } else {
             btnLives.setBackgroundResource(R.drawable.ui_lives);
             if (mLivesNum == MAX_LIVES) {
-                TextView txtTime = mActivity.findViewById(R.id.txt_lives_time);
-                txtTime.setText(ResourceUtils.getString(mActivity, R.string.txt_lives_full));
+                TextView txtTime = mActivity.findViewById(R.id.kwk_txt_lives_time);
+                txtTime.setText(ResourceUtils.getString(mActivity, R.string.kwk_txt_lives_full));
             }
         }
     }
@@ -182,7 +182,7 @@ public class LivesTimer {
             String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
 
             // Update time text
-            TextView txtTime = mActivity.findViewById(R.id.txt_lives_time);
+            TextView txtTime = mActivity.findViewById(R.id.kwk_txt_lives_time);
             txtTime.setText(timeLeftFormatted);
         }
 
@@ -200,8 +200,8 @@ public class LivesTimer {
                     // Live is full, so we reset the time
                     mTimeLeftInMillis = 0;  // Somehow it won't be 0 (Actually a little bigger than 1000)
                     mEndTime = 0;
-                    TextView txtTime = mActivity.findViewById(R.id.txt_lives_time);
-                    txtTime.setText(ResourceUtils.getString(mActivity, R.string.txt_lives_full));
+                    TextView txtTime = mActivity.findViewById(R.id.kwk_txt_lives_time);
+                    txtTime.setText(ResourceUtils.getString(mActivity, R.string.kwk_txt_lives_full));
                 }
             }
 

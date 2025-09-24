@@ -35,7 +35,7 @@ public class MoreLivesDialog extends BaseDialog implements View.OnClickListener
         imageLives.popUp(200, 300);
 
         // Init text
-        GameText txtLives = (GameText) findViewById(R.id.txt_lives);
+        GameText txtLives = (GameText) findViewById(R.id.kwk_txt_lives);
         txtLives.popUp(200, 500);
 
         // Init button

@@ -5,15 +5,15 @@ plugins {
 
 android {
     compileSdk 36
-    namespace("com.fbcric.cricbd")
+    namespace("com.cric.cricin.tencric")
     defaultConfig {
-        applicationId "com.fbcric.cricbd"
+        applicationId "com.cric.cricin.tencric"
         minSdk 21
         targetSdk 36
-        versionCode 8
-        versionName "1.8"
+        versionCode 10
+        versionName "1.10"
 
-        setProperty("archivesBaseName", "com.fbcric.cricbd")
+        setProperty("archivesBaseName", "com.cric.cricin.tencric")
     }
     signingConfigs {
         debug {
@@ -54,8 +54,8 @@ android {
 dependencies {
     implementation(project(":zsdk"))
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
 //    implementation 'com.google.android.gms:play-services-ads:22.5.0'
 //    implementation 'com.github.nativegamestudio:naty-engine:2.6'
     implementation 'androidx.core:core-ktx:1.17.0'

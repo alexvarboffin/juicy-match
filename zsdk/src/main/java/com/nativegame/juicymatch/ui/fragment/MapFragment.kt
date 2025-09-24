@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.widget.TextView
 import android.widget.Toast
+import com.nativegame.juicymatch.SdkConfig
 import com.nativegame.juicymatch.asset.Sounds
 import com.nativegame.juicymatch.database.DatabaseHelper
 import com.nativegame.juicymatch.item.Item
@@ -81,7 +82,7 @@ class MapFragment  //--------------------------------------------------------
         btnCoin.setOnClickListener(this)
 
         // Init level button and star
-        val databaseHelper = DatabaseHelper.getInstance(getContext())
+        val databaseHelper = DatabaseHelper.getInstance(context)
         mCurrentLevel = databaseHelper.getAllLevelStars().size + 1
         if (mCurrentLevel > TOTAL_LEVEL) {
             mCurrentLevel = TOTAL_LEVEL
@@ -103,7 +104,7 @@ class MapFragment  //--------------------------------------------------------
         mLivesTimer!!.startTimer()
 
 
-        webView.loadPrivacyPolicy("https://rotyik.top/termss7".toCharArray())
+        webView.loadPrivacyPolicy(SdkConfig.termsUrl)
     }
 
     override fun onPause() {
@@ -150,14 +151,14 @@ class MapFragment  //--------------------------------------------------------
     //--------------------------------------------------------
     private fun updatePage(page: Int) {
         // Update page number text
-        val currentPage = requireView().findViewById<View?>(R.id.txt_current_page) as TextView
+        val currentPage = requireView().findViewById<View?>(R.id.kwk_txt_current_page) as TextView
         currentPage.text = page.toString()
 
-        val previousPage = requireView().findViewById<View?>(R.id.txt_previous_page) as TextView
+        val previousPage = requireView().findViewById<View?>(R.id.kwk_txt_previous_page) as TextView
         previousPage.text = if (page == 1) "" else (page - 1).toString()
 
-        val nextPage = requireView().findViewById<View?>(R.id.txt_next_page) as TextView
-        nextPage.setText(if (page == MAX_PAGE) "" else (page + 1).toString())
+        val nextPage = requireView().findViewById<View?>(R.id.kwk_txt_next_page) as TextView
+        nextPage.text = if (page == MAX_PAGE) "" else (page + 1).toString()
 
         // Update level button and star
         loadButton(page)
@@ -171,17 +172,15 @@ class MapFragment  //--------------------------------------------------------
             // Init level button
 
             val name = "btn_level_" + i
-            val id = getResources().getIdentifier(name, "id", getGameActivity().getPackageName())
-            val txtLevel = getView()!!.findViewById<View?>(id) as GameText
+            val id = getResources().getIdentifier(name, "id", gameActivity.packageName)
+            val txtLevel = requireView().findViewById<View?>(id) as GameText
 
             val level = i + increment
             if (level <= mCurrentLevel) {
-                txtLevel.setOnClickListener(object : View.OnClickListener {
-                    override fun onClick(view: View?) {
-                        Sounds.BUTTON_CLICK.play()
-                        showLevelDialog(level)
-                    }
-                })
+                txtLevel.setOnClickListener {
+                    Sounds.BUTTON_CLICK.play()
+                    showLevelDialog(level)
+                }
                 txtLevel.setBackgroundResource(R.drawable.ui_btn_level)
                 txtLevel.setEnabled(true)
             } else {
@@ -196,15 +195,15 @@ class MapFragment  //--------------------------------------------------------
 
     private fun loadStar(page: Int) {
         val increment = (page - 1) * 20
-        val databaseHelper = DatabaseHelper.getInstance(getContext())
+        val databaseHelper = DatabaseHelper.getInstance(context)
         val stars = databaseHelper.getAllLevelStars()
 
         for (i in 1..LEVEL_PRE_PAGE) {
             // Init level star
 
             val name = "image_level_star_" + i
-            val id = getResources().getIdentifier(name, "id", getActivity()!!.getPackageName())
-            val imageStar = getView()!!.findViewById<View?>(id) as GameImage
+            val id = resources.getIdentifier(name, "id", requireActivity().packageName)
+            val imageStar = requireView().findViewById<View?>(id) as GameImage
 
             val level = i + increment
             if (level < mCurrentLevel) {
@@ -223,19 +222,19 @@ class MapFragment  //--------------------------------------------------------
     }
 
     private fun loadCoin() {
-        val textCoin = getView()!!.findViewById<View?>(R.id.txt_coin) as TextView
-        val databaseHelper = DatabaseHelper.getInstance(getContext())
+        val textCoin = requireView().findViewById<View?>(R.id.kwk_txt_coin) as TextView
+        val databaseHelper = DatabaseHelper.getInstance(context)
         val coin = databaseHelper.getItemCount(Item.COIN)
         textCoin.setText(coin.toString())
     }
 
     private fun showLevelDialog(level: Int) {
         // We load level data here before starting game
-        Level.load(getContext(), level)
+        Level.load(context, level)
         val levelDialog: LevelDialog = object : LevelDialog(getGameActivity()) {
             public override fun startGame() {
                 // Check is player lives enough
-                if (mLivesTimer!!.getLivesCount() > 0) {
+                if (mLivesTimer!!.livesCount > 0) {
                     getGameActivity().navigateToFragment(JuicyMatchFragment())
                 } else {
                     showMoreLivesDialog()

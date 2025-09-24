@@ -28,28 +28,28 @@
         app:layout_constraintTop_toTopOf="@+id/image_board" />
 
     <TextView
-        android:id="@+id/txt_moves"
+        android:id="@+id/kwk_txt_moves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_5"
         android:fontFamily="@font/baloo"
         android:gravity="center"
-        android:text="@string/txt_move"
+        android:text="@string/kwk_txt_move"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_target_size"
+        android:textSize="@dimen/kwk_txt_state_target_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/image_score_field"
         app:layout_constraintStart_toStartOf="@+id/image_score_field"
         app:layout_constraintTop_toTopOf="@+id/image_score_field" />
 
     <TextView
-        android:id="@+id/txt_move"
+        android:id="@+id/kwk_txt_move"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_move_size"
+        android:textSize="@dimen/kwk_txt_state_move_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/image_score_field"
         app:layout_constraintEnd_toEndOf="@+id/image_score_field"
@@ -69,15 +69,15 @@
         app:layout_constraintTop_toTopOf="@+id/image_board" />
 
     <TextView
-        android:id="@+id/txt_level"
+        android:id="@+id/kwk_txt_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_5"
         android:fontFamily="@font/baloo"
         android:gravity="center"
-        android:text="@string/txt_level"
+        android:text="@string/kwk_txt_level"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_level_size"
+        android:textSize="@dimen/kwk_txt_state_level_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/image_target_field"
         app:layout_constraintStart_toStartOf="@+id/image_target_field"
@@ -114,14 +114,14 @@
         app:layout_constraintStart_toEndOf="@id/image_target_02" />
 
     <TextView
-        android:id="@+id/txt_target_01"
+        android:id="@+id/kwk_txt_target_01"
         android:layout_width="0dp"
         android:layout_height="@dimen/image_state_target"
         android:layout_marginTop="@dimen/margin_10"
         android:fontFamily="@font/baloo"
         android:gravity="center|end"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_target_size"
+        android:textSize="@dimen/kwk_txt_state_target_size"
         android:textStyle="bold"
         app:layout_constraintDimensionRatio="1:2"
         app:layout_constraintEnd_toEndOf="@+id/image_target_01"
@@ -129,14 +129,14 @@
         tools:text="10" />
 
     <TextView
-        android:id="@+id/txt_target_02"
+        android:id="@+id/kwk_txt_target_02"
         android:layout_width="0dp"
         android:layout_height="@dimen/image_state_target"
         android:layout_marginTop="@dimen/margin_10"
         android:fontFamily="@font/baloo"
         android:gravity="center|end"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_target_size"
+        android:textSize="@dimen/kwk_txt_state_target_size"
         android:textStyle="bold"
         app:layout_constraintDimensionRatio="1:2"
         app:layout_constraintEnd_toEndOf="@+id/image_target_02"
@@ -144,14 +144,14 @@
         tools:text="10" />
 
     <TextView
-        android:id="@+id/txt_target_03"
+        android:id="@+id/kwk_txt_target_03"
         android:layout_width="0dp"
         android:layout_height="@dimen/image_state_target"
         android:layout_marginTop="@dimen/margin_10"
         android:fontFamily="@font/baloo"
         android:gravity="center|end"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_target_size"
+        android:textSize="@dimen/kwk_txt_state_target_size"
         android:textStyle="bold"
         app:layout_constraintDimensionRatio="1:2"
         app:layout_constraintEnd_toEndOf="@+id/image_target_03"
@@ -159,13 +159,13 @@
         tools:text="10" />
 
     <TextView
-        android:id="@+id/txt_score"
+        android:id="@+id/kwk_txt_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_state_score_size"
+        android:textSize="@dimen/kwk_txt_state_score_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/image_star_progress"
         app:layout_constraintEnd_toStartOf="@id/image_star_progress"

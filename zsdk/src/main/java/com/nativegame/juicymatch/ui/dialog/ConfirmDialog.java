@@ -39,7 +39,7 @@ public class ConfirmDialog extends BaseDialog implements View.OnClickListener {
         imageProduct.setImageResource(mProduct.getDrawableId());
 
         // Init text
-        GameText txtConfirm = (GameText) findViewById(R.id.txt_confirm);
+        GameText txtConfirm = (GameText) findViewById(R.id.kwk_txt_confirm);
         txtConfirm.popUp(200, 500);
 
         // Init button

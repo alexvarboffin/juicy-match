@@ -2,19 +2,19 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
-
+//com.pixfootball.pixfoot.betpix.footballbraz
 android {
     compileSdk 36
-    namespace("com.bpixfootball.betpix.bpxbraz")
+    namespace("com.pixfootball.pixfoot.betpix.footballbraz")
 
 
     defaultConfig {
-        applicationId "com.bpixfootball.betpix.bpxbraz"
+        applicationId "com.pixfootball.pixfoot.betpix.footballbraz"
         minSdk 21
         targetSdk 36
         versionCode 8
         versionName "1.8"
-        setProperty("archivesBaseName", "com.bpixfootball.betpix.bpxbraz")
+        setProperty("archivesBaseName", "com.pixfootball.pixfoot.betpix.footballbraz")
 
     }
 
@@ -57,8 +57,8 @@ android {
 dependencies {
     implementation(project(":zsdk"))
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
 //    implementation 'com.google.android.gms:play-services-ads:22.5.0'
 //    implementation 'com.github.nativegamestudio:naty-engine:2.6'
     implementation 'androidx.core:core-ktx:1.17.0'

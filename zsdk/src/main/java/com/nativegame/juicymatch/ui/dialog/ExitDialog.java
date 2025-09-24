@@ -27,7 +27,7 @@ public class ExitDialog extends BaseDialog implements View.OnClickListener {
         setExitAnimationId(R.anim.exit_to_center);
 
         // Init text
-        GameText txtExit = (GameText) findViewById(R.id.txt_exit);
+        GameText txtExit = (GameText) findViewById(R.id.kwk_txt_exit);
         txtExit.popUp(200, 300);
 
         // Init button
