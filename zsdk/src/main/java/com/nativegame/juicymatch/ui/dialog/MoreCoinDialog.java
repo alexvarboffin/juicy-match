@@ -26,8 +26,8 @@ public class MoreCoinDialog extends BaseDialog implements View.OnClickListener
     //--------------------------------------------------------
     public MoreCoinDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_more_coin);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_more_coin);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

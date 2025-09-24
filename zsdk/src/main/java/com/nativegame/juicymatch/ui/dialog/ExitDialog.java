@@ -21,8 +21,8 @@ public class ExitDialog extends BaseDialog implements View.OnClickListener {
     //--------------------------------------------------------
     public ExitDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_exit);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_exit);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

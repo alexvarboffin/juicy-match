@@ -23,8 +23,8 @@ open class LevelDialog(activity: GameActivity) : BaseDialog(activity), View.OnCl
     // Constructors
     //--------------------------------------------------------
     init {
-        setContentView(R.layout.dialog_level)
-        setContainerView(R.layout.dialog_container)
+        setContentView(R.layout.dialog_abc_level)
+        setContainerView(R.layout.dialog_abc_container)
         setEnterAnimationId(R.anim.enter_from_center)
         setExitAnimationId(R.anim.exit_to_center)
 

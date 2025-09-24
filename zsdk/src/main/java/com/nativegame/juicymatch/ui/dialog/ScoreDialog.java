@@ -26,8 +26,8 @@ public class ScoreDialog extends BaseDialog implements View.OnClickListener {
     //--------------------------------------------------------
     public ScoreDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_score);
-        setContainerView(R.layout.dialog_container_game);
+        setContentView(R.layout.dialog_abc_score);
+        setContainerView(R.layout.dialog_abc_container_game);
         setEnterAnimationId(R.anim.enter_from_left);
         setExitAnimationId(android.R.anim.fade_out);
 

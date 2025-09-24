@@ -26,8 +26,8 @@ public class PauseDialog extends BaseDialog implements View.OnClickListener {
     //--------------------------------------------------------
     public PauseDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_pause);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_pause);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

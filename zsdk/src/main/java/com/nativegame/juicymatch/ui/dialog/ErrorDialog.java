@@ -21,8 +21,8 @@ public class ErrorDialog extends BaseDialog implements View.OnClickListener {
     //--------------------------------------------------------
     public ErrorDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_error);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_error);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

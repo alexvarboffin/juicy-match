@@ -25,8 +25,8 @@ public class MoreLivesDialog extends BaseDialog implements View.OnClickListener
     //--------------------------------------------------------
     public MoreLivesDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_more_lives);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_more_lives);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

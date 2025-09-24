@@ -23,8 +23,8 @@ public class TutorialDialog extends BaseDialog implements View.OnClickListener {
     //--------------------------------------------------------
     public TutorialDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_tutorial);
-        setContainerView(R.layout.dialog_container_game);
+        setContentView(R.layout.dialog_abc_tutorial);
+        setContainerView(R.layout.dialog_abc_container_game);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

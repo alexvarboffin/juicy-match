@@ -22,8 +22,8 @@ public class NewBoosterDialog extends BaseDialog implements View.OnClickListener
     //--------------------------------------------------------
     public NewBoosterDialog(GameActivity activity, Product product) {
         super(activity);
-        setContentView(R.layout.dialog_new_booster);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_new_booster);
+        setContainerView(R.layout.dialog_abc_container);
 
         // Init booster image
         ImageView imageBooster = (ImageView) findViewById(R.id.image_booster);

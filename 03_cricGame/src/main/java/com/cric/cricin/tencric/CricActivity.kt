@@ -40,7 +40,7 @@ class CricActivity : GameActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_JuicyMatch)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.match_activity_main)
         setFragmentContainer(R.id.layout_container)
 
 

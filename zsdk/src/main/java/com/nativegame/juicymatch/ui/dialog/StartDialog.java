@@ -26,8 +26,8 @@ public class StartDialog extends BaseDialog {
     //--------------------------------------------------------
     public StartDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_start);
-        setContainerView(R.layout.dialog_container_game);
+        setContentView(R.layout.dialog_abc_start);
+        setContainerView(R.layout.dialog_abc_container_game);
         setEnterAnimationId(R.anim.enter_from_top);
         setExitAnimationId(R.anim.exit_to_bottom);
 

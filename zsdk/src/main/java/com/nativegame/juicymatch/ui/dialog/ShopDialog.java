@@ -31,8 +31,8 @@ public class ShopDialog extends BaseDialog implements View.OnClickListener {
     //--------------------------------------------------------
     public ShopDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_shop);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_shop);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

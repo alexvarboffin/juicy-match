@@ -22,8 +22,8 @@ public class NewPrizeDialog extends BaseDialog implements View.OnClickListener {
     //--------------------------------------------------------
     public NewPrizeDialog(GameActivity activity, Prize prize) {
         super(activity);
-        setContentView(R.layout.dialog_new_prize);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_new_prize);
+        setContainerView(R.layout.dialog_abc_container);
 
         // Init prize image
         ImageView imagePrize = (ImageView) findViewById(R.id.image_prize);

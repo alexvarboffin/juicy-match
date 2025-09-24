@@ -16,8 +16,8 @@ public class LossDialog extends BaseDialog {
     //--------------------------------------------------------
     public LossDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_loss);
-        setContainerView(R.layout.dialog_container_game);
+        setContentView(R.layout.dialog_abc_loss);
+        setContainerView(R.layout.dialog_abc_container_game);
         setEnterAnimationId(R.anim.enter_from_top);
         setExitAnimationId(R.anim.exit_to_bottom);
 

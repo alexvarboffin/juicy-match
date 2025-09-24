@@ -28,8 +28,8 @@ public class ConfirmDialog extends BaseDialog implements View.OnClickListener {
     public ConfirmDialog(GameActivity activity, Product product) {
         super(activity);
         mProduct = product;
-        setContentView(R.layout.dialog_confirm);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_confirm);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
         setExitAnimationId(R.anim.exit_to_center);
 

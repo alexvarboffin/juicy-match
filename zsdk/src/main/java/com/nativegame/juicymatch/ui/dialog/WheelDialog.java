@@ -32,8 +32,8 @@ public class WheelDialog extends BaseDialog implements AdManager.AdRewardListene
     //--------------------------------------------------------
     public WheelDialog(GameActivity activity) {
         super(activity);
-        setContentView(R.layout.dialog_wheel);
-        setContainerView(R.layout.dialog_container);
+        setContentView(R.layout.dialog_abc_wheel);
+        setContainerView(R.layout.dialog_abc_container);
         setEnterAnimationId(R.anim.enter_from_center);
 
         // Init button
