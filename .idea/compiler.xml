@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="17">
       <module name="JuicyMatch.01_cricket" target="23" />
-      <module name="JuicyMatch.02_football" target="23" />
+      <module name="JuicyMatch.03_cricGame" target="23" />
       <module name="JuicyMatch.app" target="23" />
     </bytecodeTargetLevel>
   </component>
