@@ -15,8 +15,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "JuicyMatch"
 //include ':01_cricket'
-include ':02_football'
-//include ':03_cricGame'
+//include ':02_football'
+include ':03_cricGame'
 
 
 include ':zsdk'
