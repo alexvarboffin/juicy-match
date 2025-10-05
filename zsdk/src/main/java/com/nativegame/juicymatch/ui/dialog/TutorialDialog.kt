@@ -48,7 +48,7 @@ open class TutorialDialog(activity: GameActivity) : BaseDialog(activity), View.O
 
     override fun onClick(view: View) {
         Sounds.BUTTON_CLICK.play()
-        val id = view.getId()
+        val id = view.id
         if (id == R.id.btn_play) {
             dismiss()
         }
